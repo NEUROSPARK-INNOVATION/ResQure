@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom - Your Self-Care Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span class="logo-text">Bloom</span> <i class="fas fa-spa"></i></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#personalized-plan">My Plan</a></li>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Your Journey to <span class="highlight">Self-Love</span> Starts Here</h1>
+                    <p>Discover personalized self-care routines, daily inspiration, and tools to nurture your mind, body, and soul.</p>
+                    <button class="btn primary-btn" id="get-started-btn">Get Started</button>
+                </div>
+                <div class="hero-image">
+                    <img src="/assets/blooom/front.webp" alt="Woman practicing self-care">
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Affirmation Banner -->
+        <section class="affirmation-banner">
+            <div class="container">
+                <div class="affirmation-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p id="daily-affirmation">You are worthy of love and deserve to take care of yourself.</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <button class="btn secondary-btn" id="new-affirmation-btn">New Affirmation</button>
+            </div>
+        </section>
+
+        <!-- Personalized Self-Care Plan Section -->
+        <section id="personalized-plan" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your Personalized Self-Care Plan</h2>
+                    <p>Answer a few questions to get a customized self-care plan tailored to your needs.</p>
+                </div>
+
+                <div class="plan-container">
+                    <div id="questionnaire" class="questionnaire">
+                        <h3>Let's Create Your Plan</h3>
+                        <div class="question" id="question-1">
+                            <p>What area of self-care do you want to focus on most?</p>
+                            <div class="options">
+                                <button class="option-btn" data-value="mental">Mental</button>
+                                <button class="option-btn" data-value="physical">Physical</button>
+                                <button class="option-btn" data-value="emotional">Emotional</button>
+                                <button class="option-btn" data-value="spiritual">Spiritual</button>
+                            </div>
+                        </div>
+                        <div class="question hidden" id="question-2">
+                            <p>How much time can you dedicate to self-care daily?</p>
+                            <div class="options">
+                                <button class="option-btn" data-value="5min">5 minutes</button>
+                                <button class="option-btn" data-value="15min">15 minutes</button>
+                                <button class="option-btn" data-value="30min">30 minutes</button>
+                                <button class="option-btn" data-value="60min">60+ minutes</button>
+                            </div>
+                        </div>
+                        <div class="question hidden" id="question-3">
+                            <p>What's your current stress level?</p>
+                            <div class="options">
+                                <button class="option-btn" data-value="low">Low</button>
+                                <button class="option-btn" data-value="moderate">Moderate</button>
+                                <button class="option-btn" data-value="high">High</button>
+                                <button class="option-btn" data-value="extreme">Very High</button>
+                            </div>
+                        </div>
+                        <div class="navigation-buttons hidden" id="nav-buttons">
+                            <button class="btn secondary-btn" id="prev-btn">Previous</button>
+                            <button class="btn primary-btn" id="next-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <div id="plan-result" class="plan-result hidden">
+                        <h3>Your Personalized Self-Care Plan</h3>
+                        <div class="plan-content" id="plan-content">
+                            <!-- Plan content will be inserted here by JavaScript -->
+                        </div>
+                        <button class="btn primary-btn" id="save-plan-btn">Save My Plan</button>
+                        <button class="btn secondary-btn" id="restart-btn">Start Over</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Self-Care Tips Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Daily Self-Care Tips</h2>
+                    <p>Simple ideas to incorporate into your routine</p>
+                </div>
+                <div class="tip-card" id="daily-tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Today's Tip</h3>
+                        <p id="daily-tip">Take 5 minutes to practice deep breathing. Inhale for 4 counts, hold for 4, and exhale for 6.</p>
+                    </div>
+                    <button class="btn secondary-btn" id="new-tip-btn">New Tip</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Care Routine Builder -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Build Your Self-Care Routine</h2>
+                    <p>Create and track your daily self-care activities</p>
+                </div>
+                <div class="routine-builder">
+                    <div class="routine-form">
+                        <div class="form-group">
+                            <label for="activity-name">Activity Name</label>
+                            <input type="text" id="activity-name" placeholder="e.g., Morning Meditation">
+                        </div>
+                        <div class="form-group">
+                            <label for="activity-category">Category</label>
+                            <select id="activity-category">
+                                <option value="mental">Mental</option>
+                                <option value="physical">Physical</option>
+                                <option value="emotional">Emotional</option>
+                                <option value="spiritual">Spiritual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="activity-duration">Duration (minutes)</label>
+                            <input type="number" id="activity-duration" min="1" value="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="activity-time">Time of Day</label>
+                            <select id="activity-time">
+                                <option value="morning">Morning</option>
+                                <option value="afternoon">Afternoon</option>
+                                <option value="evening">Evening</option>
+                                <option value="anytime">Anytime</option>
+                            </select>
+                        </div>
+                        <button class="btn primary-btn" id="add-activity-btn">Add to Routine</button>
+                    </div>
+                    <div class="routine-list">
+                        <h3>Your Routine</h3>
+                        <ul id="routine-items">
+                            <!-- Routine items will be added here by JavaScript -->
+                        </ul>
+                        <div class="empty-state" id="routine-empty-state">
+                            <i class="fas fa-calendar-plus"></i>
+                            <p>Your routine is empty. Add activities to get started!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Care Challenges -->
+        <section id="challenges" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Self-Care Challenges</h2>
+                    <p>Join guided challenges to build healthy habits</p>
+                </div>
+                <div class="challenges-container">
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <h3>7-Day Mindfulness Challenge</h3>
+                            <span class="badge">Beginner</span>
+                        </div>
+                        <div class="challenge-content">
+                            <p>A week-long journey to develop mindfulness practices for daily life.</p>
+                            <ul class="challenge-preview">
+                                <li>Day 1: 5-minute meditation</li>
+                                <li>Day 2: Mindful eating practice</li>
+                                <li>Day 3: Gratitude journaling</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                        <button class="btn primary-btn challenge-btn" data-challenge="mindfulness">Start Challenge</button>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <h3>30-Day Self-Love Challenge</h3>
+                            <span class="badge">All Levels</span>
+                        </div>
+                        <div class="challenge-content">
+                            <p>A month of activities designed to boost self-esteem and cultivate self-compassion.</p>
+                            <ul class="challenge-preview">
+                                <li>Day 1: Write 3 things you love about yourself</li>
+                                <li>Day 2: Take a relaxing bath or shower</li>
+                                <li>Day 3: Try a new healthy recipe</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                        <button class="btn primary-btn challenge-btn" data-challenge="self-love">Start Challenge</button>
+                    </div>
+                </div>
+                <div id="active-challenge" class="active-challenge hidden">
+                    <div class="active-challenge-header">
+                        <h3 id="active-challenge-title">Challenge Title</h3>
+                        <div class="challenge-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="challenge-progress-fill"></div>
+                            </div>
+                            <span id="challenge-progress-text">Day 1/7</span>
+                        </div>
+                    </div>
+                    <div class="active-challenge-content">
+                        <div class="today-task">
+                            <h4>Today's Task</h4>
+                            <div class="task-card" id="today-task-card">
+                                <p id="today-task-description">Task description will appear here</p>
+                                <button class="btn secondary-btn" id="complete-task-btn">Mark Complete</button>
+                            </div>
+                        </div>
+                        <div class="upcoming-tasks">
+                            <h4>Coming Up</h4>
+                            <ul id="upcoming-tasks-list">
+                                <!-- Upcoming tasks will be added here by JavaScript -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habit Tracker -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Habit Tracker</h2>
+                    <p>Track your daily self-care habits to build consistency</p>
+                </div>
+                <div class="habit-tracker">
+                    <div class="habit-form">
+                        <div class="form-group">
+                            <label for="habit-name">New Habit</label>
+                            <input type="text" id="habit-name" placeholder="e.g., Drink water">
+                        </div>
+                        <div class="form-group">
+                            <label for="habit-goal">Daily Goal</label>
+                            <input type="text" id="habit-goal" placeholder="e.g., 8 glasses">
+                        </div>
+                        <button class="btn primary-btn" id="add-habit-btn">Add Habit</button>
+                    </div>
+                    <div class="habits-container">
+                        <div class="habits-header">
+                            <h3>Your Habits</h3>
+                            <div class="date-display">
+                                <button id="prev-date-btn" class="date-nav-btn"><i class="fas fa-chevron-left"></i></button>
+                                <span id="current-date">Today</span>
+                                <button id="next-date-btn" class="date-nav-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="habits-list" id="habits-list">
+                            <!-- Habits will be added here by JavaScript -->
+                        </div>
+                        <div class="empty-state" id="habits-empty-state">
+                            <i class="fas fa-check-circle"></i>
+                            <p>No habits added yet. Start tracking your self-care habits!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guided Meditation & Relaxation -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Guided Meditation & Relaxation</h2>
+                    <p>Tools to help you relax and find peace</p>
+                </div>
+                <div class="meditation-tools">
+                    <div class="breathing-tool">
+                        <h3>Breathing Exercise</h3>
+                        <div class="breathing-circle" id="breathing-circle">
+                            <div class="circle-text" id="breathing-text">Breathe In</div>
+                        </div>
+                        <div class="breathing-controls">
+                            <button class="btn secondary-btn" id="start-breathing-btn">Start</button>
+                            <select id="breathing-pattern">
+                                <option value="4-4-4-4">Box Breathing (4-4-4-4)</option>
+                                <option value="4-7-8">Relaxing Breath (4-7-8)</option>
+                                <option value="5-5">Simple Breath (5-5)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="meditation-videos">
+                        <h3>Guided Meditations</h3>
+                        <div class="video-container">
+                            <div class="video-card">
+                                <div class="video-placeholder">
+                                  <a href="https://youtu.be/inpok4MKVLM?si=tme1HzM-fyxLHC8J"><i class="fas fa-play-circle"></i></a>
+                                    <span>5-Minute Meditation for Beginners</span>
+                                </div>
+                            </div>
+                            <div class="video-card">
+                                <div class="video-placeholder">
+                                    <a href="https://youtu.be/g0jfhRcXtLQ?si=KYcCJsxc2aiKfrxT"><i class="fas fa-play-circle"></i></a>
+                                    <span>Sleep Meditation</span>
+                                </div>
+                            </div>
+                            <div class="video-card">
+                                <div class="video-placeholder">
+                                    <a href="https://youtu.be/4pLUleLdwY4?si=6-MDHfVFELLwPr8l"><i class="fas fa-play-circle"></i></a>
+                                    <span>Anxiety Relief Meditation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIY Self-Care Ideas -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>DIY Self-Care Ideas</h2>
+                    <p>Simple activities you can do at home</p>
+                </div>
+                <div class="diy-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="beauty">Beauty</button>
+                    <button class="category-btn" data-category="food">Wellness Food</button>
+                    <button class="category-btn" data-category="creative">Creative</button>
+                    <button class="category-btn" data-category="relaxation">Relaxation</button>
+                </div>
+                <div class="diy-ideas-container" id="diy-ideas-container">
+                    <div class="diy-card" data-category="beauty">
+                        <div class="diy-image">
+                            <img src="/assets/blooom/facemask.jpg" alt="Honey face mask">
+                        </div>
+                        <div class="diy-content">
+                            <h3>Honey & Yogurt Face Mask</h3>
+                            <p>A simple, nourishing mask to hydrate your skin.</p>
+                            <a href="https://www.youtube.com/watch?v=3pn_IovYCN4"><button class="btn secondary-btn view-diy-btn">View Recipe</button></a>
+                        </div>
+                    </div>
+                    <div class="diy-card" data-category="food">
+                        <div class="diy-image">
+                            <img src="/assets/blooom/tea.jpg" alt="Calming tea">
+                        </div>
+                        <div class="diy-content">
+                            <h3>Calming Herbal Tea Blend</h3>
+                            <p>A soothing blend to help you relax and unwind.</p>
+                           <a href="https://wildlyorganic.com/blogs/recipes/diy-herbal-tea-blend-for-relaxation?srsltid=AfmBOoowZMih7rCu9J7hq9g5V95O7ulOtIqOkvPSJRP8EpoZMVhABQgE"><button class="btn secondary-btn view-diy-btn">View Recipe</button></a>
+                        </div>
+                    </div>
+                    <div class="diy-card" data-category="creative">
+                        <div class="diy-image">
+                            <img src="/assets/blooom/journal.jpg" alt="Gratitude journal">
+                        </div>
+                        <div class="diy-content">
+                            <h3>DIY Gratitude Journal</h3>
+                            <p>Create your own journal to practice daily gratitude.</p>
+                            <a href="https://www.youtube.com/watch?v=2Dzz1RyzBwA"><button class="btn secondary-btn view-diy-btn">View Instructions</button></a>
+                        </div>
+                    </div>
+                    <div class="diy-card" data-category="relaxation">
+                        <div class="diy-image">
+                            <img src="/assets/blooom/bathsalts.jpg" alt="Bath salts">
+                        </div>
+                        <div class="diy-content">
+                            <h3>Lavender Bath Salts</h3>
+                            <p>Make your own relaxing bath salts with simple ingredients.</p>
+                            <a href="https://adventuresincooking.com/diy-homemade-bath-salt/"><button class="btn secondary-btn view-diy-btn">View Recipe</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mental Well-Being Check-In -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mental Well-Being Check-In</h2>
+                    <p>Track your mood and get personalized suggestions</p>
+                </div>
+                <div class="mood-tracker">
+                    <div class="mood-check-in">
+                        <h3>How are you feeling today?</h3>
+                        <div class="mood-options">
+                            <button class="mood-btn" data-mood="great">
+                                <i class="fas fa-grin-beam"></i>
+                                <span>Great</span>
+                            </button>
+                            <button class="mood-btn" data-mood="good">
+                                <i class="fas fa-smile"></i>
+                                <span>Good</span>
+                            </button>
+                            <button class="mood-btn" data-mood="okay">
+                                <i class="fas fa-meh"></i>
+                                <span>Okay</span>
+                            </button>
+                            <button class="mood-btn" data-mood="down">
+                                <i class="fas fa-frown"></i>
+                                <span>Down</span>
+                            </button>
+                            <button class="mood-btn" data-mood="stressed">
+                                <i class="fas fa-tired"></i>
+                                <span>Stressed</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mood-insights hidden" id="mood-insights">
+                        <h3>Your Mood Insights</h3>
+                        <div class="insight-content" id="mood-insight-content">
+                            <!-- Mood insights will be added here by JavaScript -->
+                        </div>
+                        <div class="mood-suggestions" id="mood-suggestions">
+                            <!-- Mood suggestions will be added here by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="mood-history">
+                        <h3>Your Mood History</h3>
+                        <div class="mood-calendar" id="mood-calendar">
+                            <!-- Mood calendar will be added here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Self-Care Resources</h2>
+                    <p>Helpful resources for your well-being journey</p>
+                </div>
+                <div class="resources-container">
+                    <div class="resource-card emergency">
+                        <div class="resource-header">
+                            <h3>Emergency Help</h3>
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="resource-content">
+                            <p>If you're in crisis or need immediate support:</p>
+                            <ul class="resource-list">
+                                <li>National Suicide Prevention Lifeline: 988</li>
+                                <li>Crisis Text Line: Text HOME to 741741</li>
+                                <li>Emergency Services: 911</li>
+                            </ul>
+                            <button class="btn emergency-btn">SOS - Get Help Now</button>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h3>Mental Health Resources</h3>
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="resource-content">
+                            <p>Helpful links and resources for mental well-being:</p>
+                            <ul class="resource-list">
+                                <li><a href="https://www.nami.org/" class="resource-link">National Alliance on Mental Illness</a></li>
+                                <li><a href="https://mhanational.org/" class="resource-link">Mental Health America</a></li>
+                                <li><a href="https://adaa.org/" class="resource-link">Anxiety and Depression Association</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h3>Self-Care Books</h3>
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="resource-content">
+                            <p>Recommended reading for your self-care journey:</p>
+                            <ul class="resource-list">
+                                <li>"The Self-Care Project" by Jayne Hardy</li>
+                                <li>"Burnout" by Emily & Amelia Nagoski</li>
+                                <li>"The Body Keeps the Score" by Bessel van der Kolk</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><span class="logo-text">Bloom</span> <i class="fas fa-spa"></i></h2>
+                    <p>Your daily companion for self-care and well-being.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#personalized-plan">My Plan</a></li>
+                            <li><a href="#challenges">Challenges</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bloom Self-Care App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

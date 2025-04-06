@@ -1,0 +1,1587 @@
+/* Base Styles */
+:root {
+    --primary-color: #ff6b9d;
+    --primary-light: #ffb6c9;
+    --primary-dark: #e84a7f;
+    --secondary-color: #9d65c9;
+    --secondary-light: #c490e4;
+    --secondary-dark: #7a4ca0;
+    --accent-color: #65c9ab;
+    --accent-light: #a8e6cf;
+    --accent-dark: #41a184;
+    --danger-color: #ff5c5c;
+    --danger-dark: #d43f3f;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-lighter: #999999;
+    --bg-color: #ffffff;
+    --bg-light: #f8f5fa;
+    --bg-dark: #f0e6f6;
+    --border-color: #e0e0e0;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+input, select, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* App Container */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-color);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.logo {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    flex: 1;
+}
+
+.nav-links li {
+    padding: 12px 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.nav-links li:hover {
+    background-color: var(--bg-light);
+    border-left-color: var(--primary-light);
+}
+
+.nav-links li.active {
+    background-color: var(--bg-light);
+    border-left-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.nav-links li i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.sos-button-container {
+    padding: 20px;
+    margin-top: auto;
+}
+
+.sos-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.sos-button:hover {
+    background-color: var(--danger-dark);
+    transform: scale(1.05);
+}
+
+.sos-button i {
+    margin-right: 8px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Page Styles */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.page-header .date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.card-header i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-dark);
+}
+
+.danger-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.danger-btn:hover {
+    background-color: var(--danger-dark);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Period Status Card */
+.period-status .card-content {
+    padding-top: 10px;
+}
+
+.period-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.period-days {
+    text-align: center;
+}
+
+.period-days span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+}
+
+.period-days p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.period-date {
+    text-align: right;
+}
+
+.period-date p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.period-date span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Mood Tracker Card */
+.mood-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.mood-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    transition: var(--transition);
+}
+
+.mood-btn i {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--text-lighter);
+    transition: var(--transition);
+}
+
+.mood-btn span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.mood-btn:hover i {
+    transform: scale(1.2);
+}
+
+.mood-btn[data-mood="happy"] i {
+    color: var(--accent-color);
+}
+
+.mood-btn[data-mood="calm"] i {
+    color: var(--secondary-light);
+}
+
+.mood-btn[data-mood="tired"] i {
+    color: var(--text-lighter);
+}
+
+.mood-btn[data-mood="stressed"] i {
+    color: var(--primary-light);
+}
+
+.mood-btn[data-mood="anxious"] i {
+    color: var(--danger-color);
+}
+
+/* Quick SOS Card */
+.sos-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.sos-option-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--bg-light);
+    border: none;
+    border-radius: var(--border-radius);
+    margin: 0 5px;
+    transition: var(--transition);
+}
+
+.sos-option-btn:first-child {
+    margin-left: 0;
+}
+
+.sos-option-btn:last-child {
+    margin-right: 0;
+}
+
+.sos-option-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--danger-color);
+}
+
+.sos-option-btn span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sos-option-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+}
+
+/* Self-Care Reminder Card */
+.reminder-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reminder-content i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-right: 15px;
+}
+
+.reminder-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.reminder-text p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Emergency Contacts Card */
+.contact-list {
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.contact-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.contact-call-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.contact-call-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Helpline Numbers Card */
+.helpline-list {
+    margin-bottom: 10px;
+}
+
+.helpline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.helpline-item:last-child {
+    border-bottom: none;
+}
+
+.helpline-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.helpline-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.helpline-call-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-light);
+    color: var(--accent-dark);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.helpline-call-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Profile Page Styles */
+.profile-container {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.profile-header {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-avatar {
+    position: relative;
+    margin-right: 20px;
+}
+
+.profile-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.change-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.change-avatar-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.profile-name h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.profile-name p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.profile-sections {
+    padding: 20px 30px;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    font-size: 1.2rem;
+}
+
+.section-header i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.emergency-contacts-list {
+    margin-bottom: 20px;
+}
+
+.emergency-contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.emergency-contact:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.contact-details {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.delete-contact-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    transition: var(--transition);
+}
+
+.delete-contact-btn:hover {
+    background-color: var(--danger-dark);
+}
+
+/* Period Tracker Page Styles */
+.period-tracker-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.period-calendar {
+    grid-column: 1 / -1;
+}
+
+.month-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.month-navigation button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.month-navigation span {
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-days div {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.calendar-days div:hover {
+    background-color: var(--bg-light);
+}
+
+.calendar-days .today {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.calendar-days .period-day {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.calendar-days .fertile-day {
+    background-color: var(--secondary-light);
+    color: var(--secondary-dark);
+}
+
+.calendar-days .ovulation-day {
+    background-color: var(--accent-light);
+    color: var(--accent-dark);
+}
+
+.calendar-days .pms-day {
+    background-color: var(--primary-light);
+    opacity: 0.7;
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.legend-color.period-day {
+    background-color: var(--primary-light);
+}
+
+.legend-color.fertile-day {
+    background-color: var(--secondary-light);
+}
+
+.legend-color.ovulation-day {
+    background-color: var(--accent-light);
+}
+
+.legend-color.pms-day {
+    background-color: var(--primary-light);
+    opacity: 0.7;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+}
+
+.stat-item h4 {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.notification-setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notification-setting:last-child {
+    border-bottom: none;
+}
+
+.notification-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.notification-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-size: 1.2rem;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Flow Options */
+.flow-options {
+    display: flex;
+    gap: 10px;
+}
+
+.flow-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    transition: var(--transition);
+}
+
+.flow-btn:hover, .flow-btn.selected {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--primary-dark);
+}
+
+/* Symptom Options */
+.symptom-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.symptom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.symptom-checkbox input {
+    margin-right: 8px;
+}
+
+/* SOS Page Styles */
+.sos-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.sos-modes {
+    grid-column: 1 / -1;
+}
+
+.sos-mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+
+.sos-mode:last-child {
+    margin-bottom: 0;
+}
+
+.mode-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.mode-features {
+    list-style: none;
+}
+
+.mode-features li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.mode-features li i {
+    color: var(--accent-color);
+    margin-right: 8px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.setting-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.sos-contact-list {
+    margin-bottom: 20px;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-edit-btn, .contact-delete-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.contact-edit-btn {
+    background-color: var(--secondary-light);
+    color: var(--secondary-dark);
+}
+
+.contact-edit-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.contact-delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.contact-delete-btn:hover {
+    background-color: var(--danger-dark);
+}
+
+/* SOS Active Modal */
+.sos-active-modal .modal-content {
+    max-width: 400px;
+}
+
+.sos-header {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.sos-timer {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sos-status {
+    margin-bottom: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-item i {
+    width: 30px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.sos-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.sos-actions button {
+    flex: 1;
+}
+
+/* Self-Care Page Styles */
+.self-care-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.self-care-tracker {
+    grid-column: 1 / -1;
+}
+
+.date-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.date-navigation button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.date-navigation span {
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.activity-list {
+    margin-bottom: 10px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item.completed {
+    background-color: var(--bg-light);
+}
+
+.activity-checkbox {
+    margin-right: 15px;
+}
+
+.activity-checkbox input {
+    display: none;
+}
+
+.activity-checkbox label {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.activity-checkbox input:checked + label:after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.activity-info {
+    flex: 1;
+}
+
+.activity-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.activity-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.activity-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.activity-edit-btn, .activity-delete-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.activity-edit-btn {
+    background-color: var(--secondary-light);
+    color: var(--secondary-dark);
+}
+
+.activity-edit-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.activity-delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.activity-delete-btn:hover {
+    background-color: var(--danger-dark);
+}
+
+/* Mood & Stress Tracker */
+.tracker-section {
+    margin-bottom: 20px;
+}
+
+.tracker-section h4 {
+    margin-bottom: 10px;
+}
+
+.mood-slider-container, .stress-slider-container {
+    position: relative;
+}
+
+.mood-slider, .stress-slider {
+    width: 100%;
+    height: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, var(--danger-color), var(--primary-color), var(--accent-color));
+    outline: none;
+    border-radius: 5px;
+}
+
+.mood-slider::-webkit-slider-thumb, .stress-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.mood-labels, .stress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.mood-labels span, .stress-labels span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Wellness Reminders */
+.reminder-list {
+    margin-bottom: 20px;
+}
+
+.reminder-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.reminder-item:last-child {
+    border-bottom: none;
+}
+
+.reminder-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.reminder-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Community Page Styles */
+.community-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.helpline-card {
+    grid-column: 1 / -1;
+}
+
+.helpline-category {
+    margin-bottom: 20px;
+}
+
+.helpline-category:last-child {
+    margin-bottom: 0;
+}
+
+.helpline-category h4 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.group-list {
+    display: grid;
+    gap: 15px;
+}
+
+.group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+}
+
+.group-info {
+    flex: 1;
+}
+
+.group-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.group-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.group-meta {
+    display: flex;
+    gap: 15px;
+}
+
+.group-meta span {
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+    display: flex;
+    align-items: center;
+}
+
+.group-meta span i {
+    margin-right: 5px;
+}
+
+.join-group-btn {
+    padding: 8px 15px;
+}
+
+.article-list {
+    display: grid;
+    gap: 15px;
+}
+
+.article-item {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.article-image {
+    flex-shrink: 0;
+}
+
+.article-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.article-info h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.article-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Settings Page Styles */
+.settings-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .period-tracker-container,
+    .sos-container,
+    .self-care-container,
+    .community-container,
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .sidebar.active {
+        width: 250px;
+        padding: 20px 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .sos-options,
+    .mood-options {
+        flex-wrap: wrap;
+    }
+    
+    .sos-option-btn,
+    .mood-btn {
+        flex: 0 0 48%;
+        margin-bottom: 10px;
+    }
+    
+    .period-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .period-date {
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .symptom-options {
+        grid-template-columns: 1fr;
+    }
+}

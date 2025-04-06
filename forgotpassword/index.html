@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Your Password</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+        }
+
+        .reset-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            padding-left: 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #6c63ff;
+            box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+        }
+
+        .input-group .icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .input-group .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+        }
+
+        button.reset-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button.reset-btn:hover {
+            background-color: #5a52d5;
+            transform: translateY(-2px);
+        }
+
+        button.reset-btn:active {
+            transform: translateY(0);
+        }
+
+        .password-note {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .reset-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="reset-card">
+            <h1>Reset Password</h1>
+            <form id="resetForm">
+                <div class="input-group">
+                    <span class="icon">🔑</span>
+                    <input type="password" id="newPassword" placeholder="New Password" required>
+                    <button type="button" class="toggle-password" data-for="newPassword">👁️</button>
+                </div>
+                <div class="input-group">
+                    <span class="icon">🔐</span>
+                    <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+                    <button type="button" class="toggle-password" data-for="confirmPassword">👁️</button>
+                </div>
+                <button type="submit" class="reset-btn">Reset Password</button>
+            </form>
+            <p class="password-note">Make sure your new password is strong.</p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const inputId = this.getAttribute('data-for');
+                const input = document.getElementById(inputId);
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.textContent = '🔒';
+                } else {
+                    input.type = 'password';
+                    this.textContent = '👁️';
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("resetForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // ✋ Prevent page reload!
+
+    const password = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    const token = new URLSearchParams(window.location.search).get("token");
+
+    try {
+      const res = await fetch(`https://hershield-rn5q.onrender.com/api/reset-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("✅ Password has been reset!");
+        window.location.href = "/login/index.html"; // or wherever you want
+      } else {
+        alert("❌ " + data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong.");
+    }
+  });
+});
+
+    </script>
+</body>
+</html>

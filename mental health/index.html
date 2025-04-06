@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindfulHer - Women's Mental Health & Wellness</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Mindful<span>Her</span></h1>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#intro" class="active">Home</a></li>
+                    <li><a href="#issues">Mental Health Issues</a></li>
+                    <li><a href="#tips">Wellness Tips</a></li>
+                    <li><a href="#assessment">Self-Assessment</a></li>
+                    <li><a href="#meditation">Meditation</a></li>
+                    <li><a href="#levels">Wellness Levels</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="intro" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Mental Health Matters</h1>
+                <p>Discover resources, support, and guidance for your mental well-being journey</p>
+                <div class="hero-buttons">
+                    <a href="#assessment" class="btn primary-btn">Take Self-Assessment</a>
+                    <a href="#meditation" class="btn secondary-btn">Try Meditation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="intro-content" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Introduction to Mental Health</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="content-columns">
+                <div class="column">
+                    <h3>Why Mental Health Matters</h3>
+                    <p>Mental health is a crucial component of overall well-being, affecting how we think, feel, and act. It influences how we handle stress, relate to others, and make choices. For women, unique biological, social, and cultural factors can create distinct mental health challenges and experiences.</p>
+                    <p>Taking care of your mental health is just as important as physical health. It enables you to realize your full potential, cope with life's stresses, work productively, and contribute meaningfully to your community.</p>
+                </div>
+                <div class="column">
+                    <h3>Common Challenges</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="icon"><i class="fas fa-brain"></i></span>
+                            <div>
+                                <h4>Stress & Anxiety</h4>
+                                <p>Persistent worry, fear, and overwhelming pressure that can interfere with daily activities.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-heart"></i></span>
+                            <div>
+                                <h4>Emotional Well-being</h4>
+                                <p>Managing emotions effectively and maintaining a positive outlook despite challenges.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-balance-scale"></i></span>
+                            <div>
+                                <h4>Work-Life Balance</h4>
+                                <p>Juggling professional responsibilities with personal needs and family obligations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="issues" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Common Mental Health Issues</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="tabs">
+                <div class="tab-header">
+                    <div class="tab-btn active" data-tab="anxiety">Anxiety & Stress</div>
+                    <div class="tab-btn" data-tab="depression">Depression</div>
+                    <div class="tab-btn" data-tab="postpartum">Postpartum Depression</div>
+                    <div class="tab-btn" data-tab="burnout">Burnout</div>
+                    <div class="tab-btn" data-tab="sleep">Sleep Disorders</div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="anxiety">
+                        <div class="tab-flex">
+                            <div class="tab-text">
+                                <h3>Anxiety & Stress Management</h3>
+                                <p>Anxiety disorders are characterized by persistent, excessive worry that interferes with daily activities. Women are twice as likely as men to be diagnosed with an anxiety disorder.</p>
+                                <h4>Common symptoms include:</h4>
+                                <ul>
+                                    <li>Excessive worry about everyday matters</li>
+                                    <li>Physical symptoms like rapid heartbeat, shortness of breath</li>
+                                    <li>Difficulty concentrating or mind going blank</li>
+                                    <li>Sleep disturbances</li>
+                                    <li>Feeling on edge or restless</li>
+                                </ul>
+                                <p>Effective management strategies include cognitive-behavioral therapy, mindfulness practices, regular exercise, and in some cases, medication.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="/assets/mindfulher/womeninstress.jpg" alt="Woman practicing stress management techniques">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="depression">
+                        <div class="tab-flex">
+                            <div class="tab-text">
+                                <h3>Depression & Mood Disorders</h3>
+                                <p>Depression is more than just feeling sad. It's a serious mood disorder that affects how you feel, think, and handle daily activities.</p>
+                                <h4>Signs of depression may include:</h4>
+                                <ul>
+                                    <li>Persistent sad, anxious, or "empty" mood</li>
+                                    <li>Loss of interest in activities once enjoyed</li>
+                                    <li>Decreased energy or fatigue</li>
+                                    <li>Difficulty concentrating or making decisions</li>
+                                    <li>Changes in appetite or sleep patterns</li>
+                                    <li>Thoughts of death or suicide</li>
+                                </ul>
+                                <p>Depression is treatable with psychotherapy, medication, lifestyle changes, and social support.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="/assets/mindfulher/womwnsupport.webp" alt="Woman receiving support for depression">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="postpartum">
+                        <div class="tab-flex">
+                            <div class="tab-text">
+                                <h3>Postpartum Depression</h3>
+                                <p>Postpartum depression is a serious mental health condition that affects some women after childbirth. It's more than just "baby blues" and can interfere with daily functioning.</p>
+                                <h4>Symptoms may include:</h4>
+                                <ul>
+                                    <li>Overwhelming fatigue and exhaustion</li>
+                                    <li>Intense irritability and anger</li>
+                                    <li>Severe mood swings</li>
+                                    <li>Withdrawal from family and friends</li>
+                                    <li>Difficulty bonding with the baby</li>
+                                    <li>Thoughts of harming yourself or your baby</li>
+                                </ul>
+                                <p>Early intervention is crucial. Treatment options include counseling, medication, and support groups specifically for new mothers.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="/assets/mindfulher/motherdepression.jpg" alt="Mother receiving support for postpartum depression">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="burnout">
+                        <div class="tab-flex">
+                            <div class="tab-text">
+                                <h3>Work-Life Balance & Burnout</h3>
+                                <p>Burnout is a state of chronic stress that leads to physical and emotional exhaustion, cynicism, detachment, and feelings of ineffectiveness.</p>
+                                <h4>Signs of burnout include:</h4>
+                                <ul>
+                                    <li>Feeling exhausted and drained most of the time</li>
+                                    <li>Decreased satisfaction and sense of accomplishment</li>
+                                    <li>Feeling overwhelmed and unable to meet demands</li>
+                                    <li>Detachment and cynicism toward responsibilities</li>
+                                    <li>Reduced performance and productivity</li>
+                                </ul>
+                                <p>Addressing burnout involves setting boundaries, prioritizing self-care, seeking support, and potentially making significant life or work changes.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="/assets/mindfulher/worklife.avif" alt="Mother receiving support for postpartum depression">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="sleep">
+                        <div class="tab-flex">
+                            <div class="tab-text">
+                                <h3>Sleep Disorders</h3>
+                                <p>Sleep disorders can significantly impact mental health. Women are more likely than men to experience insomnia and other sleep disturbances throughout their lives.</p>
+                                <h4>Common sleep issues include:</h4>
+                                <ul>
+                                    <li>Difficulty falling or staying asleep</li>
+                                    <li>Waking up too early and unable to go back to sleep</li>
+                                    <li>Unrefreshing sleep despite adequate time in bed</li>
+                                    <li>Excessive daytime sleepiness</li>
+                                    <li>Sleep disruptions due to hormonal changes</li>
+                                </ul>
+                                <p>Improving sleep hygiene, establishing consistent sleep routines, and addressing underlying mental health conditions can help manage sleep disorders.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="/assets/mindfulher/sleep.avif" alt="Woman experiencing peaceful sleep">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tips for Mental Well-Being</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Mindfulness & Meditation</h3>
+                    <p>Practicing mindfulness helps bring awareness to the present moment, reducing anxiety about the past or future. Regular meditation can reduce stress, improve focus, and promote emotional balance.</p>
+                    <ul class="card-list">
+                        <li>Start with just 5 minutes daily</li>
+                        <li>Focus on your breath</li>
+                        <li>Use guided meditations</li>
+                        <li>Practice body scanning</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Exercise & Healthy Lifestyle</h3>
+                    <p>Regular physical activity releases endorphins, reduces stress hormones, and improves sleep quality. A balanced diet supports brain health and emotional regulation.</p>
+                    <ul class="card-list">
+                        <li>Aim for 30 minutes of movement daily</li>
+                        <li>Include foods rich in omega-3s</li>
+                        <li>Stay hydrated</li>
+                        <li>Limit alcohol and caffeine</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social Support & Therapy</h3>
+                    <p>Strong social connections are linked to better mental health outcomes. Professional therapy provides tools and strategies for managing mental health challenges.</p>
+                    <ul class="card-list">
+                        <li>Nurture meaningful relationships</li>
+                        <li>Consider individual or group therapy</li>
+                        <li>Join support groups</li>
+                        <li>Practice open communication</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Self-Care Practices</h3>
+                    <p>Self-care isn't selfish—it's essential for mental well-being. Regular self-care activities help prevent burnout and maintain emotional balance.</p>
+                    <ul class="card-list">
+                        <li>Schedule regular "me time"</li>
+                        <li>Set healthy boundaries</li>
+                        <li>Engage in activities you enjoy</li>
+                        <li>Practice saying "no" when needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="assessment" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Self-Assessment & Resources</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="assessment-container">
+                <div class="assessment-intro">
+                    <h3>Check Your Stress Levels</h3>
+                    <p>This simple assessment can help you understand your current stress levels. It's not a diagnostic tool, but it can provide insight into areas that might need attention.</p>
+                    <button id="start-assessment" class="btn primary-btn">Start Assessment</button>
+                </div>
+                <div id="assessment-quiz" class="assessment-quiz hidden">
+                    <div id="question-container">
+                        <!-- Questions will be inserted here by JavaScript -->
+                    </div>
+                    <div class="assessment-navigation">
+                        <button id="prev-question" class="btn secondary-btn" disabled>Previous</button>
+                        <button id="next-question" class="btn primary-btn">Next</button>
+                    </div>
+                </div>
+                <div id="assessment-results" class="assessment-results hidden">
+                    <h3>Your Results</h3>
+                    <div id="results-content">
+                        <!-- Results will be inserted here by JavaScript -->
+                    </div>
+                    <button id="retake-assessment" class="btn secondary-btn">Retake Assessment</button>
+                </div>
+            </div>
+            <div class="resources-container">
+                <h3>Helpful Resources</h3>
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Therapy Options</h4>
+                        <p>Find licensed therapists specializing in women's mental health.</p>
+                        <a href="https://esanjeevani.mohfw.gov.in/#/patient/signin" class="resource-link">Find Therapists</a>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Support Groups</h4>
+                        <p>Connect with others facing similar challenges.</p>
+                        <a href="https://themindclan.com/city/kolkata/" class="resource-link">Find Support Groups</a>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h4>Crisis Hotlines</h4>
+                        <p>Immediate support for mental health emergencies.</p>
+                        <a href="https://telemanas.mohfw.gov.in/" class="resource-link">Crisis Resources</a>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Educational Materials</h4>
+                        <p>Articles, books, and research on women's mental health.</p>
+                        <a href="https://www.goodreads.com/list/show/925.Women_and_Mental_Illness_fiction_and_nonfiction_" class="resource-link">Browse Library</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="meditation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meditation & Relaxation Guide</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="meditation-intro">
+                <p>Meditation is a powerful practice for reducing stress, improving focus, and promoting emotional well-being. Our guided exercises are designed for all experience levels.</p>
+            </div>
+            <div class="meditation-techniques">
+                <h3>Step-by-Step Meditation Techniques</h3>
+                <div class="technique-accordion">
+                    <div class="technique-item">
+                        <div class="technique-header">
+                            <h4>Breathing Meditation <span class="level-tag">Beginner</span></h4>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="technique-content">
+                            <ol>
+                                <li>Find a comfortable seated position</li>
+                                <li>Close your eyes or maintain a soft gaze</li>
+                                <li>Breathe naturally through your nose</li>
+                                <li>Focus your attention on your breath</li>
+                                <li>Notice the sensation of air moving in and out</li>
+                                <li>When your mind wanders, gently return focus to your breath</li>
+                                <li>Start with 5 minutes and gradually increase</li>
+                            </ol>
+                            <button class="btn secondary-btn start-timer" data-minutes="5">Start 5-Minute Timer</button>
+                        </div>
+                    </div>
+                    <div class="technique-item">
+                        <div class="technique-header">
+                            <h4>Body Scan Meditation <span class="level-tag">Intermediate</span></h4>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="technique-content">
+                            <ol>
+                                <li>Lie down or sit comfortably</li>
+                                <li>Close your eyes and take several deep breaths</li>
+                                <li>Bring awareness to your feet, noticing any sensations</li>
+                                <li>Slowly move your attention up through your body</li>
+                                <li>Notice areas of tension and consciously relax them</li>
+                                <li>Continue until you've scanned your entire body</li>
+                                <li>End with awareness of your whole body</li>
+                            </ol>
+                            <button class="btn secondary-btn start-timer" data-minutes="10">Start 10-Minute Timer</button>
+                        </div>
+                    </div>
+                    <div class="technique-item">
+                        <div class="technique-header">
+                            <h4>Loving-Kindness Meditation <span class="level-tag">Advanced</span></h4>
+                            <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="technique-content">
+                            <ol>
+                                <li>Sit comfortably with eyes closed</li>
+                                <li>Begin with deep, calming breaths</li>
+                                <li>Direct positive wishes toward yourself: "May I be happy, may I be healthy..."</li>
+                                <li>Extend these wishes to a loved one</li>
+                                <li>Then to an acquaintance</li>
+                                <li>Then to someone difficult in your life</li>
+                                <li>Finally, extend wishes to all beings everywhere</li>
+                            </ol>
+                            <button class="btn secondary-btn start-timer" data-minutes="15">Start 15-Minute Timer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breathing-exercises">
+                <h3>Guided Breathing Exercises</h3>
+                <div class="breathing-container">
+                    <div class="breathing-visual" id="breathing-circle">
+                        <div class="circle-text">Breathe</div>
+                    </div>
+                    <div class="breathing-controls">
+                        <button id="start-breathing" class="btn primary-btn">Start 4-7-8 Breathing</button>
+                        <div class="breathing-instructions">
+                            <p><strong>4-7-8 Breathing Technique:</strong></p>
+                            <ul>
+                                <li>Inhale quietly through your nose for 4 seconds</li>
+                                <li>Hold your breath for 7 seconds</li>
+                                <li>Exhale completely through your mouth for 8 seconds</li>
+                                <li>Repeat the cycle 4 times</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="meditation-challenges">
+                <h3>Meditation Challenges</h3>
+                <div class="challenge-levels">
+                    <div class="challenge-item">
+                        <h4>Beginner Challenge</h4>
+                        <p>7 days of 5-minute daily meditation</p>
+                        <button class="btn secondary-btn view-challenge" data-challenge="beginner">View Details</button>
+                    </div>
+                    <div class="challenge-item">
+                        <h4>Intermediate Challenge</h4>
+                        <p>14 days of 10-minute daily meditation</p>
+                        <button class="btn secondary-btn view-challenge" data-challenge="intermediate">View Details</button>
+                    </div>
+                    <div class="challenge-item">
+                        <h4>Advanced Challenge</h4>
+                        <p>21 days of 15-minute daily meditation</p>
+                        <button class="btn secondary-btn view-challenge" data-challenge="advanced">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>YouTube Video Integration</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="video-container">
+                <div class="featured-video">
+                    <h3>Featured: 10-Minute Guided Meditation for Stress Relief</h3>
+                        <iframe class="video-placeholder" data-video="placeholder"width="560" height="315" src="https://www.youtube.com/embed/H_uc-uQ3Nkc?si=62dKEb9usblImc3H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <!-- <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div> -->
+                    </div>
+                    <p>This guided meditation helps reduce stress and anxiety through mindful breathing and visualization techniques.</p>
+                </div>
+                <div class="video-playlists">
+                    <h3>Recommended Playlists</h3>
+                    <div class="playlist-tabs">
+                        <div class="playlist-tab active" data-playlist="meditation">Meditation</div>
+                        <div class="playlist-tab" data-playlist="stress">Stress Relief</div>
+                        <div class="playlist-tab" data-playlist="selfcare">Self-Care</div>
+                    </div>
+                    <div class="playlist-content">
+                        <div class="playlist active" id="meditation-playlist">
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/morningmeditation.jpg" alt="Meditation video">
+                                    <span class="video-duration">10:21</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/OccjH_2ddQc?si=--oqikilO7vKxkPr"><h4>Morning Meditation for Clarity</h4></a>
+                                    <p>Start your day with intention and focus</p>
+                                </div>
+                            </div>
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/bedtimemeditation.jpg" alt="Meditation video">
+                                    <span class="video-duration">10:01</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/aEqlQvczMJQ?si=JCBUY-v3INkFgZsa"><h4>Bedtime Relaxation Meditation</h4></a>
+                                    <p>Calm your mind for restful sleep</p>
+                                </div>
+                            </div>
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/mindfullness.jpg" alt="Meditation video">
+                                    <span class="video-duration">3:43</span>
+                                </div>
+                                <div class="playlist-info">
+                                   <a href="https://youtu.be/bLpChrgS0AY?si=DCp_PzNYKNDVfo-6"><h4>Mindfulness for Beginners</h4></a>
+                                    <p>Simple techniques to stay present</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playlist" id="stress-playlist">
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/streesfelief.jpg" alt="Stress relief video">
+                                    <span class="video-duration">0:58</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/fSRtMmXGr-w?si=Z5BN0XTVpczyEPeH"><h4>Quick Stress Relief Techniques</h4></a>
+                                    <p>Exercises you can do anywhere</p>
+                                </div>
+                            </div>
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/yogastress.jpg" alt="Stress relief video">
+                                    <span class="video-duration">32:15</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/_zbtKeeAa-Y?si=vOHm3fHMAHiQx8XC"><h4>Yoga for Stress Management</h4></a>
+                                    <p>Gentle movements to release tension</p>
+                                </div>
+                            </div>
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/breathinganxiety.webp" alt="Stress relief video">
+                                    <span class="video-duration">5:50</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/odADwWzHR24?si=aRoF1BHsqECT8q6w"><h4>Breathing Techniques for Anxiety</h4></a>
+                                    <p>Calm your nervous system quickly</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playlist" id="selfcare-playlist">
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/selfcare.webp" alt="Self-care video">
+                                    <span class="video-duration">5:34</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/l_zUHnCAx0Y?si=KtrD9njavdcPXHUM"><h4>Creating a Self-Care Routine</h4></a>
+                                    <p>Simple daily practices for well-being</p>
+                                </div>
+                            </div>
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/journal.webp" alt="Self-care video">
+                                    <span class="video-duration">17:14</span>
+                                </div>
+                                <div class="playlist-info">
+                                    <a href="https://youtu.be/FNJO1pZV-I8?si=gHXhACdu_3Iivn6E"><h4>Journaling for Mental Health</h4></a>
+                                    <p>Writing exercises for emotional processing</p>
+                                </div>
+                            </div>
+                            <div class="playlist-item">
+                                <div class="playlist-thumbnail">
+                                    <img src="/assets/mindfulher/movement3.jpg" alt="Self-care video">
+                                    <span class="video-duration">12:14</span>
+                                </div>
+                                <div class="playlist-info">
+                                   <a href="https://youtu.be/xTuoHuGHb3A?si=mNBj6VEQb6arMpKf"><h4>Mindful Movement Practice</h4></a> 
+                                    <p>Gentle exercises for body awareness</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="levels" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Level-Based Mental Well-Being System</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="levels-intro">
+                <p>Our progressive system helps you build mental well-being skills step by step. Start at Level 1 and advance as you become comfortable with each practice.</p>
+            </div>
+            <div class="levels-container">
+                <div class="level-path">
+                    <div class="level-node active" data-level="1">
+                        <div class="level-number">1</div>
+                    </div>
+                    <div class="level-connector"></div>
+                    <div class="level-node" data-level="2">
+                        <div class="level-number">2</div>
+                    </div>
+                    <div class="level-connector"></div>
+                    <div class="level-node" data-level="3">
+                        <div class="level-number">3</div>
+                    </div>
+                    <div class="level-connector"></div>
+                    <div class="level-node" data-level="4">
+                        <div class="level-number">4</div>
+                    </div>
+                    <div class="level-connector"></div>
+                    <div class="level-node" data-level="5">
+                        <div class="level-number">5</div>
+                    </div>
+                </div>
+                <div class="level-content-container">
+                    <div class="level-content active" id="level-1-content">
+                        <h3>Level 1: Basic Mindfulness Exercises</h3>
+                        <p>Begin your mental well-being journey with simple practices that can be incorporated into your daily routine.</p>
+                        <div class="level-practices">
+                            <div class="practice-item">
+                                <h4><i class="fas fa-lungs"></i> Breathing Techniques</h4>
+                                <p>Simple breathing exercises to calm your mind and reduce stress. Practice for 5 minutes daily.</p>
+                                <a href="#meditation" class="practice-link">View Techniques</a>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-book"></i> Journaling</h4>
+                                <p>Write down thoughts, feelings, and experiences to increase self-awareness and process emotions.</p>
+                                <ul class="practice-tips">
+                                    <li>Start with 5 minutes daily</li>
+                                    <li>Try gratitude journaling</li>
+                                    <li>Record emotional patterns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-content" id="level-2-content">
+                        <h3>Level 2: Daily Gratitude & Light Activity</h3>
+                        <p>Build on your foundation by incorporating gratitude practices and gentle physical movement.</p>
+                        <div class="level-practices">
+                            <div class="practice-item">
+                                <h4><i class="fas fa-heart"></i> Gratitude Practice</h4>
+                                <p>Regularly acknowledge things you're thankful for to shift focus toward positive aspects of life.</p>
+                                <ul class="practice-tips">
+                                    <li>List 3 things you're grateful for daily</li>
+                                    <li>Include small, everyday moments</li>
+                                    <li>Notice how gratitude affects your mood</li>
+                                </ul>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-walking"></i> Light Physical Activity</h4>
+                                <p>Engage in gentle movement to release tension and boost mood-enhancing endorphins.</p>
+                                <ul class="practice-tips">
+                                    <li>10-15 minute daily walks</li>
+                                    <li>Gentle stretching routines</li>
+                                    <li>Mindful movement practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-content" id="level-3-content">
+                        <h3>Level 3: Guided Meditation & Digital Detox</h3>
+                        <p>Deepen your practice with structured meditation and create healthy boundaries with technology.</p>
+                        <div class="level-practices">
+                            <div class="practice-item">
+                                <h4><i class="fas fa-om"></i> Guided Meditation</h4>
+                                <p>Follow structured meditation sessions to develop focus and emotional regulation.</p>
+                                <ul class="practice-tips">
+                                    <li>10-minute daily sessions</li>
+                                    <li>Try different meditation styles</li>
+                                    <li>Use guided recordings</li>
+                                </ul>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-mobile-alt"></i> Digital Detox</h4>
+                                <p>Create intentional breaks from digital devices to reduce stress and improve presence.</p>
+                                <ul class="practice-tips">
+                                    <li>Designate tech-free hours</li>
+                                    <li>Create phone-free zones</li>
+                                    <li>Practice mindful technology use</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-content" id="level-4-content">
+                        <h3>Level 4: Advanced Stress Management</h3>
+                        <p>Learn sophisticated techniques to handle complex stressors and challenging emotions.</p>
+                        <div class="level-practices">
+                            <div class="practice-item">
+                                <h4><i class="fas fa-brain"></i> Cognitive Restructuring</h4>
+                                <p>Identify and reframe negative thought patterns that contribute to stress and anxiety.</p>
+                                <ul class="practice-tips">
+                                    <li>Notice automatic negative thoughts</li>
+                                    <li>Question their validity</li>
+                                    <li>Replace with balanced perspectives</li>
+                                </ul>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-water"></i> Progressive Relaxation</h4>
+                                <p>Systematically release physical tension to induce deep relaxation and calm.</p>
+                                <ul class="practice-tips">
+                                    <li>Practice 15-20 minutes daily</li>
+                                    <li>Tense and release muscle groups</li>
+                                    <li>Combine with visualization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-content" id="level-5-content">
+                        <h3>Level 5: Long-term Emotional Resilience</h3>
+                        <p>Develop sustainable practices for ongoing emotional well-being and personal growth.</p>
+                        <div class="level-practices">
+                            <div class="practice-item">
+                                <h4><i class="fas fa-seedling"></i> Values-Based Living</h4>
+                                <p>Align daily choices with your core values to create meaning and purpose.</p>
+                                <ul class="practice-tips">
+                                    <li>Identify personal values</li>
+                                    <li>Set intentions based on values</li>
+                                    <li>Make choices that honor your values</li>
+                                </ul>
+                            </div>
+                            <div class="practice-item">
+                                <h4><i class="fas fa-hands-helping"></i> Compassion Practice</h4>
+                                <p>Cultivate kindness toward yourself and others to build emotional resilience.</p>
+                                <ul class="practice-tips">
+                                    <li>Practice self-compassion daily</li>
+                                    <li>Extend compassion to others</li>
+                                    <li>Use loving-kindness meditation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Community & Support</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="community-container">
+                <div class="community-forums">
+                    <h3>Discussion Forums</h3>
+                    <p>Connect with other women in a safe, supportive environment to share experiences and strategies.</p>
+                    <div class="forum-topics">
+                        <div class="forum-topic">
+                            <div class="topic-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4>Anxiety Support</h4>
+                                <p>Share experiences and coping strategies for anxiety and stress.</p>
+                                <span class="topic-stats">245 members • 37 discussions</span>
+                            </div>
+                            <a href="#" class="btn secondary-btn">Join</a>
+                        </div>
+                        <div class="forum-topic">
+                            <div class="topic-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4>Self-Care Circle</h4>
+                                <p>Exchange ideas for nurturing mental and emotional well-being.</p>
+                                <span class="topic-stats">189 members • 42 discussions</span>
+                            </div>
+                            <a href="#" class="btn secondary-btn">Join</a>
+                        </div>
+                        <div class="forum-topic">
+                            <div class="topic-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4>Work-Life Balance</h4>
+                                <p>Strategies for managing professional and personal responsibilities.</p>
+                                <span class="topic-stats">173 members • 29 discussions</span>
+                            </div>
+                            <a href="#" class="btn secondary-btn">Join</a>
+                        </div>
+                        <div class="forum-topic">
+                            <div class="topic-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4>Sleep & Rest</h4>
+                                <p>Discussions about improving sleep quality and restful practices.</p>
+                                <span class="topic-stats">156 members • 31 discussions</span>
+                            </div>
+                            <a href="#" class="btn secondary-btn">Join</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="professional-help">
+                    <h3>Professional Support</h3>
+                    <p>When self-help strategies aren't enough, professional support can provide specialized guidance and treatment.</p>
+                    <div class="help-options">
+                        <div class="help-option">
+                            <h4><i class="fas fa-user-md"></i> Find a Therapist</h4>
+                            <p>Connect with licensed mental health professionals specializing in women's mental health.</p>
+                            <a href="https://esanjeevani.mohfw.gov.in/" class="help-link">Search Directory</a>
+                        </div>
+                        <div class="help-option">
+                            <h4><i class="fas fa-phone-alt"></i> Crisis Support</h4>
+                            <p>Immediate assistance for mental health emergencies, available 24/7.</p>
+                            <div class="crisis-numbers">
+                                <div class="crisis-number">
+                                    <span class="number-label">National Crisis Line:</span>
+                                    <span class="number">988</span>
+                                </div>
+                                <div class="crisis-number">
+                                    <span class="number-label">Text Crisis Line:</span>
+                                    <span class="number">Text HOME to 741741</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <h4>Contact Our Team</h4>
+                        <p>Have questions or need guidance? Our mental health professionals can help.</p>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="therapy">Therapy Information</option>
+                                    <option value="resources">Resource Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Mindful<span>Her</span></h2>
+                    <p>Supporting women's mental well-being</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#intro">Home</a></li>
+                        <li><a href="#issues">Mental Health Issues</a></li>
+                        <li><a href="#tips">Wellness Tips</a></li>
+                        <li><a href="#assessment">Self-Assessment</a></li>
+                        <li><a href="#meditation">Meditation</a></li>
+                        <li><a href="#levels">Wellness Levels</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-resources">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Mental Health Articles</a></li>
+                        <li><a href="#">Find a Therapist</a></li>
+                        <li><a href="#">Crisis Support</a></li>
+                        <li><a href="#">Research & Studies</a></li>
+                        <li><a href="#">Podcast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to our newsletter for mental health tips and resources</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MindfulHer. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="disclaimer">This website provides general information about mental health and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="meditation-timer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Meditation Timer</h3>
+            <div class="timer-display">
+                <div id="timer-circle">
+                    <div id="timer-text">00:00</div>
+                </div>
+            </div>
+            <div class="timer-controls">
+                <button id="pause-timer" class="btn secondary-btn">Pause</button>
+                <button id="stop-timer" class="btn primary-btn">End Session</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="challenge-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="challenge-content">
+                <!-- Challenge content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

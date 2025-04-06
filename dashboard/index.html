@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer - Women's Safety & Wellness App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h1>Safe<span>Her</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-page="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </li>
+                <li data-page="period-tracker">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Period Tracker</span>
+                </li>
+                <li data-page="sos">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>SOS</span>
+                </li>
+                <li data-page="self-care">
+                    <i class="fas fa-heart"></i>
+                    <span>Self-Care</span>
+                </li>
+                <li data-page="community">
+                    <i class="fas fa-users"></i>
+                    <span>Community</span>
+                </li>
+                <li data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+            <div class="sos-button-container">
+                <button id="sos-button" class="sos-button">
+                    <i class="fas fa-exclamation-circle"></i> SOS
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="user-info">
+                    <span id="greeting">Hello, Sarah</span>
+                    <div class="user-avatar">
+                        <img src="/assets/sarah.png" alt="User Avatar">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Page -->
+            <section id="dashboard" class="page active">
+                <div class="page-header">
+                    <h2>Dashboard</h2>
+                    <p class="date" id="current-date">Monday, March 24, 2025</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Period Status Card -->
+                    <div class="card period-status">
+                        <div class="card-header">
+                            <h3>Period Status</h3>
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="period-info">
+                                <div class="period-days">
+                                    <span id="days-to-period">12</span>
+                                    <p>Days until next period</p>
+                                </div>
+                                <div class="period-date">
+                                    <p>Expected on:</p>
+                                    <span id="next-period-date">April 5, 2025</span>
+                                </div>
+                            </div>
+                            <button class="btn secondary-btn" id="update-period-btn">Update Last Period</button>
+                        </div>
+                    </div>
+
+                    <!-- Mood Tracker Card -->
+                    <div class="card mood-tracker">
+                        <div class="card-header">
+                            <h3>Today's Mood</h3>
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="card-content">
+                            <p>How are you feeling today?</p>
+                            <div class="mood-options">
+                                <button class="mood-btn" data-mood="happy">
+                                    <i class="fas fa-grin-beam"></i>
+                                    <span>Happy</span>
+                                </button>
+                                <button class="mood-btn" data-mood="calm">
+                                    <i class="fas fa-smile"></i>
+                                    <span>Calm</span>
+                                </button>
+                                <button class="mood-btn" data-mood="tired">
+                                    <i class="fas fa-meh"></i>
+                                    <span>Tired</span>
+                                </button>
+                                <button class="mood-btn" data-mood="stressed">
+                                    <i class="fas fa-frown"></i>
+                                    <span>Stressed</span>
+                                </button>
+                                <button class="mood-btn" data-mood="anxious">
+                                    <i class="fas fa-sad-tear"></i>
+                                    <span>Anxious</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick SOS Card -->
+                    <div class="card quick-sos">
+                        <div class="card-header">
+                            <h3>Quick SOS</h3>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-content">
+                            <p>Activate emergency features with one tap</p>
+                            <div class="sos-options">
+                                <button class="sos-option-btn" id="basic-sos-btn">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Basic SOS</span>
+                                </button>
+                                <button class="sos-option-btn" id="high-alert-btn">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>High Alert</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Self-Care Reminder Card -->
+                    <div class="card self-care-reminder">
+                        <div class="card-header">
+                            <h3>Self-Care Reminder</h3>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="reminder-content">
+                                <i class="fas fa-spa"></i>
+                                <div class="reminder-text">
+                                    <h4>Evening Meditation</h4>
+                                    <p>8:00 PM - 10 minutes</p>
+                                </div>
+                            </div>
+                            <button class="btn primary-btn" id="complete-reminder-btn">Mark Complete</button>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contacts Card -->
+                    <div class="card emergency-contacts">
+                        <div class="card-header">
+                            <h3>Emergency Contacts</h3>
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <ul class="contact-list">
+                                <li class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>Mom</h4>
+                                        <p>+1 (555) 123-4567</p>
+                                    </div>
+                                    <button class="contact-call-btn">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                </li>
+                                <li class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>Sister</h4>
+                                        <p>+1 (555) 987-6543</p>
+                                    </div>
+                                    <button class="contact-call-btn">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                            <button class="btn secondary-btn" id="manage-contacts-btn">Manage Contacts</button>
+                        </div>
+                    </div>
+
+                    <!-- Helpline Numbers Card -->
+                    <div class="card helpline-numbers">
+                        <div class="card-header">
+                            <h3>Helpline Numbers</h3>
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="card-content">
+                            <ul class="helpline-list">
+                                <li class="helpline-item">
+                                    <div class="helpline-info">
+                                        <h4>Women's Safety Helpline</h4>
+                                        <p>1-800-799-7233</p>
+                                    </div>
+                                    <button class="helpline-call-btn">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                </li>
+                                <li class="helpline-item">
+                                    <div class="helpline-info">
+                                        <h4>Mental Health Support</h4>
+                                        <p>1-800-273-8255</p>
+                                    </div>
+                                    <button class="helpline-call-btn">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Page -->
+            <section id="profile" class="page">
+                <div class="page-header">
+                    <h2>My Profile</h2>
+                    <button class="btn primary-btn" id="save-profile-btn">Save Changes</button>
+                </div>
+
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="/assets/sarah.png" alt="Profile Avatar">
+                            <button class="change-avatar-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <div class="profile-name">
+                            <h3 id="profile-display-name">Sarah Johnson</h3>
+                            <p>Member since January 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-sections">
+                        <!-- Basic Details Section -->
+                        <div class="profile-section">
+                            <div class="section-header">
+                                <h3>Basic Details</h3>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" value="Sarah Johnson">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <input type="number" id="age" value="28">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender">
+                                        <option value="female" selected>Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="non-binary">Non-binary</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="sarah.johnson@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" value="+1 (555) 123-4567">
+                            </div>
+                        </div>
+
+                        <!-- Health Details Section -->
+                        <div class="profile-section">
+                            <div class="section-header">
+                                <h3>Health Details (Optional)</h3>
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="allergies">Allergies</label>
+                                <textarea id="allergies" placeholder="List any allergies here...">Penicillin</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="medical-conditions">Medical Conditions</label>
+                                <textarea id="medical-conditions" placeholder="List any medical conditions here...">Asthma</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="medications">Current Medications</label>
+                                <textarea id="medications" placeholder="List any medications here...">Albuterol inhaler</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="blood-type">Blood Type</label>
+                                <select id="blood-type">
+                                    <option value="">Select Blood Type</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+" selected>O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Contacts Section -->
+                        <div class="profile-section">
+                            <div class="section-header">
+                                <h3>Emergency Contacts</h3>
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="emergency-contacts-list">
+                                <div class="emergency-contact">
+                                    <div class="contact-details">
+                                        <div class="form-group">
+                                            <label for="contact-name-1">Name</label>
+                                            <input type="text" id="contact-name-1" value="Jane Johnson (Mom)">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-phone-1">Phone Number</label>
+                                            <input type="tel" id="contact-phone-1" value="+1 (555) 123-4567">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-relation-1">Relationship</label>
+                                            <input type="text" id="contact-relation-1" value="Mother">
+                                        </div>
+                                    </div>
+                                    <button class="delete-contact-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div class="emergency-contact">
+                                    <div class="contact-details">
+                                        <div class="form-group">
+                                            <label for="contact-name-2">Name</label>
+                                            <input type="text" id="contact-name-2" value="Emily Johnson (Sister)">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-phone-2">Phone Number</label>
+                                            <input type="tel" id="contact-phone-2" value="+1 (555) 987-6543">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-relation-2">Relationship</label>
+                                            <input type="text" id="contact-relation-2" value="Sister">
+                                        </div>
+                                    </div>
+                                    <button class="delete-contact-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn secondary-btn" id="add-contact-btn">
+                                <i class="fas fa-plus"></i> Add Contact
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Period Tracker Page -->
+            <section id="period-tracker" class="page">
+                <div class="page-header">
+                    <h2>Period Tracker</h2>
+                    <div class="period-actions">
+                        <button class="btn secondary-btn" id="log-period-btn">Log Period</button>
+                        <button class="btn primary-btn" id="period-settings-btn">Settings</button>
+                    </div>
+                </div>
+
+                <div class="period-tracker-container">
+                    <!-- Period Calendar -->
+                    <div class="card period-calendar">
+                        <div class="card-header">
+                            <h3>Period Calendar</h3>
+                            <div class="month-navigation">
+                                <button id="prev-month-btn"><i class="fas fa-chevron-left"></i></button>
+                                <span id="current-month">March 2025</span>
+                                <button id="next-month-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="calendar-weekdays">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <div class="calendar-days" id="calendar-days">
+                                <!-- Calendar days will be generated by JavaScript -->
+                            </div>
+                            <div class="calendar-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color period-day"></div>
+                                    <span>Period</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color fertile-day"></div>
+                                    <span>Fertile Window</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color ovulation-day"></div>
+                                    <span>Ovulation</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color pms-day"></div>
+                                    <span>PMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Period Stats -->
+                    <div class="card period-stats">
+                        <div class="card-header">
+                            <h3>Cycle Insights</h3>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <h4>Average Cycle Length</h4>
+                                    <p><span id="avg-cycle-length">28</span> days</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>Average Period Length</h4>
+                                    <p><span id="avg-period-length">5</span> days</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>Next Period</h4>
+                                    <p id="next-period">April 5, 2025</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>Fertile Window</h4>
+                                    <p id="fertile-window">March 18-23, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Period Notifications -->
+                    <div class="card period-notifications">
+                        <div class="card-header">
+                            <h3>Period Notifications</h3>
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="notification-setting">
+                                <div class="notification-info">
+                                    <h4>Period Reminder</h4>
+                                    <p>Get notified 2 days before your period</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="period-reminder-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-setting">
+                                <div class="notification-info">
+                                    <h4>Fertile Window Alert</h4>
+                                    <p>Get notified at the start of your fertile window</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="fertile-alert-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-setting">
+                                <div class="notification-info">
+                                    <h4>SMS Notifications</h4>
+                                    <p>Receive period reminders via SMS</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="sms-notification-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-setting">
+                                <div class="notification-info">
+                                    <h4>WhatsApp Notifications</h4>
+                                    <p>Receive period reminders via WhatsApp</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="whatsapp-notification-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Log Period Modal -->
+                    <div class="modal" id="log-period-modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Log Your Period</h3>
+                                <button class="close-modal-btn">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="period-start-date">Start Date</label>
+                                    <input type="date" id="period-start-date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="period-end-date">End Date (Optional)</label>
+                                    <input type="date" id="period-end-date">
+                                </div>
+                                <div class="form-group">
+                                    <label>Flow Intensity</label>
+                                    <div class="flow-options">
+                                        <button class="flow-btn" data-flow="light">Light</button>
+                                        <button class="flow-btn" data-flow="medium">Medium</button>
+                                        <button class="flow-btn" data-flow="heavy">Heavy</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Symptoms</label>
+                                    <div class="symptom-options">
+                                        <label class="symptom-checkbox">
+                                            <input type="checkbox" value="cramps">
+                                            <span>Cramps</span>
+                                        </label>
+                                        <label class="symptom-checkbox">
+                                            <input type="checkbox" value="headache">
+                                            <span>Headache</span>
+                                        </label>
+                                        <label class="symptom-checkbox">
+                                            <input type="checkbox" value="bloating">
+                                            <span>Bloating</span>
+                                        </label>
+                                        <label class="symptom-checkbox">
+                                            <input type="checkbox" value="fatigue">
+                                            <span>Fatigue</span>
+                                        </label>
+                                        <label class="symptom-checkbox">
+                                            <input type="checkbox" value="mood-swings">
+                                            <span>Mood Swings</span>
+                                        </label>
+                                        <label class="symptom-checkbox">
+                                            <input type="checkbox" value="acne">
+                                            <span>Acne</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="period-notes">Notes</label>
+                                    <textarea id="period-notes" placeholder="Add any notes about this period..."></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn secondary-btn" id="cancel-log-btn">Cancel</button>
+                                <button class="btn primary-btn" id="save-period-btn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SOS Page -->
+            <section id="sos" class="page">
+                <div class="page-header">
+                    <h2>SOS Emergency</h2>
+                    <button class="btn primary-btn" id="test-sos-btn">Test SOS</button>
+                </div>
+
+                <div class="sos-container">
+                    <!-- SOS Modes Card -->
+                    <div class="card sos-modes">
+                        <div class="card-header">
+                            <h3>Emergency Modes</h3>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="sos-mode">
+                                <div class="mode-info">
+                                    <h4>Basic SOS Mode</h4>
+                                    <ul class="mode-features">
+                                        <li><i class="fas fa-check"></i> Sends location to emergency contacts</li>
+                                        <li><i class="fas fa-check"></i> Live location tracking via GPS</li>
+                                        <li><i class="fas fa-check"></i> Starts audio & video recording</li>
+                                    </ul>
+                                </div>
+                                <button class="btn danger-btn" id="activate-basic-sos">Activate</button>
+                            </div>
+                            <div class="sos-mode">
+                                <div class="mode-info">
+                                    <h4>High Alert Mode</h4>
+                                    <ul class="mode-features">
+                                        <li><i class="fas fa-check"></i> All Basic SOS features</li>
+                                        <li><i class="fas fa-check"></i> Sends details to nearest police station</li>
+                                        <li><i class="fas fa-check"></i> Hides app for user protection</li>
+                                    </ul>
+                                </div>
+                                <button class="btn danger-btn" id="activate-high-alert">Activate</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOS Settings Card -->
+                    <div class="card sos-settings">
+                        <div class="card-header">
+                            <h3>SOS Settings</h3>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Shake to Activate SOS</h4>
+                                    <p>Rapidly shake your phone 3 times to activate SOS</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="shake-sos-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Power Button SOS</h4>
+                                    <p>Press power button 5 times quickly to activate SOS</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="power-sos-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Automatic Recording</h4>
+                                    <p>Automatically start recording when SOS is activated</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="auto-record-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Siren Sound</h4>
+                                    <p>Play loud siren when SOS is activated</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="siren-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Custom SOS Message</h4>
+                                    <p>Message sent to emergency contacts</p>
+                                </div>
+                                <button class="btn secondary-btn" id="edit-sos-message-btn">Edit Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contacts Card -->
+                    <div class="card emergency-contacts-card">
+                        <div class="card-header">
+                            <h3>Emergency Contacts</h3>
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <ul class="sos-contact-list">
+                                <li class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>Jane Johnson (Mom)</h4>
+                                        <p>+1 (555) 123-4567</p>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <button class="contact-edit-btn">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="contact-delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>Emily Johnson (Sister)</h4>
+                                        <p>+1 (555) 987-6543</p>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <button class="contact-edit-btn">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="contact-delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="btn secondary-btn" id="add-sos-contact-btn">
+                                <i class="fas fa-plus"></i> Add Contact
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SOS Message Modal -->
+                    <div class="modal" id="sos-message-modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Edit SOS Message</h3>
+                                <button class="close-modal-btn">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="sos-message">Emergency Message</label>
+                                    <textarea id="sos-message" rows="4">EMERGENCY! I need help. This is my current location. Please contact me or emergency services immediately.</textarea>
+                                </div>
+                                <p class="message-note">Note: Your current location will be automatically included with this message.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn secondary-btn" id="cancel-message-btn">Cancel</button>
+                                <button class="btn primary-btn" id="save-message-btn">Save Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Self-Care Page -->
+            <section id="self-care" class="page">
+                <div class="page-header">
+                    <h2>Self-Care & Well-Being</h2>
+                    <button class="btn primary-btn" id="add-activity-btn">Add Activity</button>
+                </div>
+
+                <div class="self-care-container">
+                    <!-- Self-Care Tracker Card -->
+                    <div class="card self-care-tracker">
+                        <div class="card-header">
+                            <h3>Self-Care Tracker</h3>
+                            <div class="date-navigation">
+                                <button id="prev-day-btn"><i class="fas fa-chevron-left"></i></button>
+                                <span id="current-day">Today, March 24</span>
+                                <button id="next-day-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="activity-list">
+                                <div class="activity-item completed">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="activity-1" checked>
+                                        <label for="activity-1"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Morning Meditation</h4>
+                                        <p>10 minutes - 7:00 AM</p>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <button class="activity-edit-btn">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="activity-delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="activity-2">
+                                        <label for="activity-2"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Evening Yoga</h4>
+                                        <p>20 minutes - 6:00 PM</p>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <button class="activity-edit-btn">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="activity-delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-checkbox">
+                                        <input type="checkbox" id="activity-3">
+                                        <label for="activity-3"></label>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Journal Writing</h4>
+                                        <p>15 minutes - 8:00 PM</p>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <button class="activity-edit-btn">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="activity-delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mood & Stress Tracker Card -->
+                    <div class="card mood-stress-tracker">
+                        <div class="card-header">
+                            <h3>Mood & Stress Tracker</h3>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="tracker-section">
+                                <h4>Today's Mood</h4>
+                                <div class="mood-slider-container">
+                                    <input type="range" min="1" max="5" value="3" class="mood-slider" id="mood-slider">
+                                    <div class="mood-labels">
+                                        <span>😢</span>
+                                        <span>😕</span>
+                                        <span>😐</span>
+                                        <span>🙂</span>
+                                        <span>😄</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tracker-section">
+                                <h4>Stress Level</h4>
+                                <div class="stress-slider-container">
+                                    <input type="range" min="1" max="5" value="2" class="stress-slider" id="stress-slider">
+                                    <div class="stress-labels">
+                                        <span>Low</span>
+                                        <span>Medium</span>
+                                        <span>High</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tracker-section">
+                                <h4>Notes</h4>
+                                <textarea id="mood-notes" placeholder="How are you feeling today? What's on your mind?"></textarea>
+                            </div>
+                            <button class="btn primary-btn" id="save-mood-btn">Save</button>
+                        </div>
+                    </div>
+
+                    <!-- Wellness Reminders Card -->
+                    <div class="card wellness-reminders">
+                        <div class="card-header">
+                            <h3>Wellness Reminders</h3>
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="reminder-list">
+                                <div class="reminder-item">
+                                    <div class="reminder-info">
+                                        <h4>Morning Meditation</h4>
+                                        <p>Daily - 7:00 AM</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="reminder-item">
+                                    <div class="reminder-info">
+                                        <h4>Hydration Reminder</h4>
+                                        <p>Every 2 hours - 8:00 AM to 8:00 PM</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="reminder-item">
+                                    <div class="reminder-info">
+                                        <h4>Evening Yoga</h4>
+                                        <p>Mon, Wed, Fri - 6:00 PM</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="reminder-item">
+                                    <div class="reminder-info">
+                                        <h4>Journaling</h4>
+                                        <p>Daily - 8:00 PM</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn secondary-btn" id="add-reminder-btn">
+                                <i class="fas fa-plus"></i> Add Reminder
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add Activity Modal -->
+                    <div class="modal" id="add-activity-modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Add Self-Care Activity</h3>
+                                <button class="close-modal-btn">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="activity-name">Activity Name</label>
+                                    <input type="text" id="activity-name" placeholder="e.g., Morning Meditation">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="activity-date">Date</label>
+                                        <input type="date" id="activity-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="activity-time">Time</label>
+                                        <input type="time" id="activity-time">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="activity-duration">Duration (minutes)</label>
+                                    <input type="number" id="activity-duration" min="1" value="15">
+                                </div>
+                                <div class="form-group">
+                                    <label for="activity-category">Category</label>
+                                    <select id="activity-category">
+                                        <option value="meditation">Meditation</option>
+                                        <option value="exercise">Exercise</option>
+                                        <option value="journaling">Journaling</option>
+                                        <option value="relaxation">Relaxation</option>
+                                        <option value="social">Social Connection</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="activity-notes">Notes</label>
+                                    <textarea id="activity-notes" placeholder="Add any notes about this activity..."></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn secondary-btn" id="cancel-activity-btn">Cancel</button>
+                                <button class="btn primary-btn" id="save-activity-btn">Save Activity</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Page -->
+            <section id="community" class="page">
+                <div class="page-header">
+                    <h2>Community & Support</h2>
+                    <button class="btn primary-btn" id="find-support-btn">Find Support</button>
+                </div>
+
+                <div class="community-container">
+                    <!-- Helpline Numbers Card -->
+                    <div class="card helpline-card">
+                        <div class="card-header">
+                            <h3>Helpline Numbers</h3>
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="helpline-category">
+                                <h4>Women's Safety</h4>
+                                <ul class="helpline-list">
+                                    <li class="helpline-item">
+                                        <div class="helpline-info">
+                                            <h5>National Domestic Violence Hotline</h5>
+                                            <p>1-800-799-7233</p>
+                                        </div>
+                                        <button class="helpline-call-btn">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                    </li>
+                                    <li class="helpline-item">
+                                        <div class="helpline-info">
+                                            <h5>RAINN Sexual Assault Hotline</h5>
+                                            <p>1-800-656-4673</p>
+                                        </div>
+                                        <button class="helpline-call-btn">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="helpline-category">
+                                <h4>Mental Health Support</h4>
+                                <ul class="helpline-list">
+                                    <li class="helpline-item">
+                                        <div class="helpline-info">
+                                            <h5>National Suicide Prevention Lifeline</h5>
+                                            <p>1-800-273-8255</p>
+                                        </div>
+                                        <button class="helpline-call-btn">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                    </li>
+                                    <li class="helpline-item">
+                                        <div class="helpline-info">
+                                            <h5>Crisis Text Line</h5>
+                                            <p>Text HOME to 741741</p>
+                                        </div>
+                                        <button class="helpline-call-btn">
+                                            <i class="fas fa-comment-alt"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Groups Card -->
+                    <div class="card support-groups">
+                        <div class="card-header">
+                            <h3>Support Groups</h3>
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="group-list">
+                                <div class="group-item">
+                                    <div class="group-info">
+                                        <h4>Women's Wellness Circle</h4>
+                                        <p>A supportive community for women to discuss health and wellness.</p>
+                                        <div class="group-meta">
+                                            <span><i class="fas fa-user-friends"></i> 1,245 members</span>
+                                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn secondary-btn join-group-btn">Join</button>
+                                </div>
+                                <div class="group-item">
+                                    <div class="group-info">
+                                        <h4>Anxiety Support Network</h4>
+                                        <p>Connect with others managing anxiety and stress.</p>
+                                        <div class="group-meta">
+                                            <span><i class="fas fa-user-friends"></i> 876 members</span>
+                                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn secondary-btn join-group-btn">Join</button>
+                                </div>
+                                <div class="group-item">
+                                    <div class="group-info">
+                                        <h4>Self-Care Collective</h4>
+                                        <p>Share self-care tips and support each other's wellness journey.</p>
+                                        <div class="group-meta">
+                                            <span><i class="fas fa-user-friends"></i> 2,103 members</span>
+                                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn secondary-btn join-group-btn">Join</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Articles Card -->
+                    <div class="card articles-card">
+                        <div class="card-header">
+                            <h3>Health & Self-Care Articles</h3>
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="article-list">
+                                <div class="article-item">
+                                    <div class="article-image">
+                                        <img src="https://via.placeholder.com/100" alt="Article Image">
+                                    </div>
+                                    <div class="article-info">
+                                        <h4>10 Self-Care Practices for Busy Women</h4>
+                                        <p>Simple ways to prioritize your well-being even with a packed schedule.</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="article-item">
+                                    <div class="article-image">
+                                        <img src="https://via.placeholder.com/100" alt="Article Image">
+                                    </div>
+                                    <div class="article-info">
+                                        <h4>Understanding Your Menstrual Cycle</h4>
+                                        <p>A comprehensive guide to tracking and managing your period.</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="article-item">
+                                    <div class="article-image">
+                                        <img src="https://via.placeholder.com/100" alt="Article Image">
+                                    </div>
+                                    <div class="article-info">
+                                        <h4>Safety Tips for Women: Staying Prepared</h4>
+                                        <p>Essential safety strategies for everyday situations.</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Page -->
+            <section id="settings" class="page">
+                <div class="page-header">
+                    <h2>Settings</h2>
+                    <button class="btn primary-btn" id="save-settings-btn">Save Changes</button>
+                </div>
+
+                <div class="settings-container">
+                    <!-- Notification Settings Card -->
+                    <div class="card notification-settings">
+                        <div class="card-header">
+                            <h3>Notification Settings</h3>
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Period Reminders</h4>
+                                    <p>Get notified before your period starts</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="period-notif-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Self-Care Reminders</h4>
+                                    <p>Get reminders for your self-care activities</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="selfcare-notif-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>SOS Alerts</h4>
+                                    <p>Notifications about SOS activations</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="sos-notif-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Community Updates</h4>
+                                    <p>Get updates from support groups and articles</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="community-notif-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOS Feature Settings Card -->
+                    <div class="card sos-feature-settings">
+                        <div class="card-header">
+                            <h3>SOS Feature Settings</h3>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Enable Basic SOS</h4>
+                                    <p>Allow sending location to emergency contacts</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="basic-sos-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Enable High Alert Mode</h4>
+                                    <p>Allow contacting authorities in emergencies</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="high-alert-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Audio Recording</h4>
+                                    <p>Allow audio recording during SOS</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="audio-recording-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Video Recording</h4>
+                                    <p>Allow video recording during SOS</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="video-recording-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings Card -->
+                    <div class="card privacy-settings">
+                        <div class="card-header">
+                            <h3>Privacy Settings</h3>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Share Health Data</h4>
+                                    <p>Share anonymized health data to improve the app</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="share-health-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Location Services</h4>
+                                    <p>Allow app to access your location (required for SOS)</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="location-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Biometric Authentication</h4>
+                                    <p>Require fingerprint/face ID to access sensitive data</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked id="biometric-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>App Lock</h4>
+                                    <p>Require PIN to access the app</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="app-lock-toggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Settings Card -->
+                    <div class="card account-settings">
+                        <div class="card-header">
+                            <h3>Account Settings</h3>
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Change Password</h4>
+                                    <p>Update your account password</p>
+                                </div>
+                                <button class="btn secondary-btn" id="change-password-btn">Change</button>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Export Data</h4>
+                                    <p>Download all your data</p>
+                                </div>
+                                <button class="btn secondary-btn" id="export-data-btn">Export</button>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Delete Account</h4>
+                                    <p>Permanently delete your account and all data</p>
+                                </div>
+                                <button class="btn danger-btn" id="delete-account-btn">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- SOS Active Modal -->
+    <div class="modal sos-active-modal" id="sos-active-modal">
+        <div class="modal-content">
+            <div class="modal-header sos-header">
+                <h3>SOS ACTIVE</h3>
+                <span class="sos-timer" id="sos-timer">00:00</span>
+            </div>
+            <div class="modal-body">
+                <div class="sos-status">
+                    <div class="status-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Location tracking active</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-microphone"></i>
+                        <span>Audio recording active</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-video"></i>
+                        <span>Video recording active</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Alert sent to 2 contacts</span>
+                    </div>
+                </div>
+                <div class="sos-actions">
+                    <button class="btn secondary-btn" id="update-location-btn">Update Location</button>
+                    <button class="btn danger-btn" id="stop-sos-btn">Stop SOS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+
+
+</body>
+</html>
