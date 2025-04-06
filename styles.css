@@ -762,3 +762,19 @@ footer {
         padding: 120px 0 80px;
     }
 }
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    padding-left: 12px;
+    padding-top: 10px;
+  }
+  
+  .logo-img {
+    height: 70px; 
+    margin-right: 10px;
+  }
