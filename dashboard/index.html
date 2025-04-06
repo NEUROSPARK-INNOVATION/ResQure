@@ -7,8 +7,60 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 2rem;
+          background: #fff;
+        }
+    
+        .custom-if-box {
+          position: fixed;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #f8f9fa;
+          border: 1px solid #ccc;
+          padding: 15px 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          min-width: 320px;
+          z-index: 9999;
+        }
+    
+        .custom-if-box p {
+          margin: 0;
+          padding-right: 10px;
+          color: #333;
+          flex: 1;
+        }
+    
+        .custom-if-box button {
+          padding: 6px 12px;
+          margin-left: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+        }
+    
+        .ok-btn {
+          background-color: #28a745;
+          color: white;
+        }
+    
+        .cancel-btn {
+          background-color: #dc3545;
+          color: white;
+        }
+      </style>
 </head>
 <body>
+    <div class="toast-container" id="toast-container"></div>
     <!-- App Container -->
     <div class="app-container">
         <!-- Sidebar Navigation -->
@@ -1345,6 +1397,37 @@
 
     <script type="module" src="script.js"></script>
 
-
+    <script>
+        function customIf(message) {
+          return new Promise((resolve) => {
+            const box = document.createElement("div");
+            box.className = "custom-if-box";
+    
+            const text = document.createElement("p");
+            text.textContent = message;
+    
+            const ok = document.createElement("button");
+            ok.textContent = "OK";
+            ok.className = "ok-btn";
+            ok.onclick = () => {
+              document.body.removeChild(box);
+              resolve(true);
+            };
+    
+            const cancel = document.createElement("button");
+            cancel.textContent = "Cancel";
+            cancel.className = "cancel-btn";
+            cancel.onclick = () => {
+              document.body.removeChild(box);
+              resolve(false);
+            };
+    
+            box.appendChild(text);
+            box.appendChild(ok);
+            box.appendChild(cancel);
+            document.body.appendChild(box);
+          });
+        }
+      </script>
 </body>
 </html>

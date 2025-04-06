@@ -126,10 +126,14 @@ function initDashboard() {
     
     if (basicSosBtn) {
         basicSosBtn.addEventListener('click', function() {
-            if (confirm('Are you sure you want to activate Basic SOS?')) {
-                //activateSOS('basic');
-                sendSOS("basic")
-            }
+            // if (confirm('Are you sure you want to activate Basic SOS?')) {
+            //     sendSOS("basic")
+            // }
+            customIf("Are you sure you want to activate Basic SOS?").then((confirmed) => {
+                if (confirmed) {
+                    sendSOS("basic");
+                } 
+            }); 
         });
     }
     
@@ -864,31 +868,51 @@ async function handleUploadAndAlert(blob) {
 
 
 function initSOS() {
-    document.getElementById("activate-basic-sos")?.addEventListener("click", function () {
-        if (confirm("Are you sure you want to activate Basic SOS?")) {
-            sendSOS("basic");
-            
-        }
+    document.getElementById("basic-sos-btn")?.addEventListener("click", function () {
+        // if (confirm("Are you sure you want to activate Basic SOS?")) {
+        //     sendSOS("basic"); 
+        // }
     });
 
-    document.getElementById("activate-high-alert")?.addEventListener("click", function () {
-        if (confirm("⚠ High Alert Mode will notify emergency contacts and police station. Proceed?")) {
-            sendSOS("basic")
-            
-        }
+    document.getElementById("high-alert-btn")?.addEventListener("click", function () {
+        // if (confirm("⚠ High Alert Mode will notify emergency contacts and police station. Proceed?")) {   
+        // }
     });
 
     document.getElementById("test-sos-btn")?.addEventListener("click", function () {
         alert("🔔 This is a test SOS alert. No messages will be sent.");
     });
 
+    // document.getElementById("stop-sos-btn")?.addEventListener("click", function () {
+    //     // if (confirm("Are you sure you want to stop the SOS alert?")) {
+    //     //     deactivateSOS();
+    //     // }
+    // });
     document.getElementById("stop-sos-btn")?.addEventListener("click", function () {
-        if (confirm("Are you sure you want to stop the SOS alert?")) {
-            deactivateSOS();
-        }
+        customIf("Are you sure you want to stop the SOS alert?")
+            .then((confirmed) => {
+                if (confirmed) {
+                    deactivateSOS();
+                }
+            });
     });
+    
 }
-
+// const basicSosBtn = document.getElementById('basic-sos-btn');
+   
+    
+//     if (basicSosBtn) {
+//         basicSosBtn.addEventListener('click', function() {
+//             // if (confirm('Are you sure you want to activate Basic SOS?')) {
+//             //     sendSOS("basic")
+//             // }
+//             customIf("Are you sure you want to activate Basic SOS?").then((confirmed) => {
+//                 if (confirmed) {
+//                     sendSOS("basic");
+//                 } 
+//             }); 
+//         });
+//     }
 // 🚨 Send SOS Alert Function
 async function sendSOS(mode) {
     if (!navigator.geolocation) {
@@ -1527,10 +1551,16 @@ document.querySelector('.emergency-contacts-list').addEventListener('click', fun
     // Only proceed if you actually clicked on a delete button
     if (deleteBtn && e.currentTarget.contains(deleteBtn)) {
         const index = Array.from(document.querySelectorAll('.delete-contact-btn')).indexOf(deleteBtn);
-        const confirmDelete = confirm('Are you sure you want to delete this contact?');
-        if (confirmDelete) {
-            deleteContact(index);
-        }
+        //const confirmDelete = confirm('Are you sure you want to delete this contact?');
+        // if (confirmDelete) {
+        //     deleteContact(index);
+        // }
+        customIf("Are you sure you want to delete this contact?").then((confirmed) => {
+            if (confirmed) {
+                deleteContact(index);
+            } 
+          });
+          
     }
 });
 
@@ -1590,9 +1620,15 @@ if (exportDataBtn) {
 const deleteAccountBtn = document.getElementById('delete-account-btn');
 if (deleteAccountBtn) {
     deleteAccountBtn.addEventListener('click', function() {
-        if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-            alert('In a real app, this would delete your account and all associated data.');
-        }
+        // if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+        //     alert('This would delete your account and all associated data.');
+        // }
+        customIf("Are you sure you want to delete your account? This action cannot be undone.").then((confirmed) => {
+            if (confirmed) {
+                alert('This would delete your account and all associated data.');
+            } 
+          });
+          
     });
 }
 
@@ -1600,9 +1636,13 @@ const highAlertBtn = document.getElementById('high-alert-btn');
 
 if (highAlertBtn) {
     highAlertBtn.addEventListener("click", async function () {
-      const confirmed = confirm("Are you sure you want to activate High Alert SOS?");
-      if (!confirmed) return;
-  
+      //const confirmed = confirm("Are you sure you want to activate High Alert SOS?");
+     // if (!confirmed) return;
+     const result = await customIf("Are you sure you want to activate High Alert SOS?");
+        if (!result) {
+            return;
+        }
+
       const email = localStorage.getItem("email");
       if (!email) {
         alert("User not logged in.");
@@ -1720,3 +1760,15 @@ async function generateSignedHighAlertUrl(fileName) {
 }
     
 
+window.alert = function(message) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    container.appendChild(toast);
+  
+    setTimeout(() => {
+      toast.remove();
+    }, 3000); // Visible for 10s total
+  };
+  

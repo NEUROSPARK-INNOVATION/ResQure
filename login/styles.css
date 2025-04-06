@@ -353,16 +353,48 @@ img {
 }
 
 
-
-
-
-
-
-
-
-
 input[type="password"]::-ms-reveal,
 input[type="password"]::-webkit-contacts-auto-fill-button,
 input[type="password"]::-webkit-credentials-auto-fill-button {
     display: none !important;
+}
+
+
+
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.toast {
+  background-color: #fff; /* Dark background for contrast */
+  color: #222; /* White text */
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  animation: fadeOut 2s ease-in-out 8s forwards;
+  transition: all 0.5s ease;
+}
+
+/* Fade-out with smooth shrinking effect */
+@keyframes fadeOut {
+  0% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-50%) scale(0.7);
+    opacity: 0;
+  }
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom IF Prompt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #fff;
+    }
+
+    .custom-if-box {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f8f9fa;
+      border: 1px solid #ccc;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 300px;
+      z-index: 1000;
+    }
+
+    .custom-if-box p {
+      margin: 0;
+      padding-right: 10px;
+      color: #333;
+      flex: 1;
+    }
+
+    .custom-if-box button {
+      padding: 6px 12px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .ok-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+
+  <script>
+    function customIf(message, onConfirm) {
+      const box = document.createElement("div");
+      box.className = "custom-if-box";
+
+      const text = document.createElement("p");
+      text.textContent = message;
+
+      const ok = document.createElement("button");
+      ok.textContent = "OK";
+      ok.className = "ok-btn";
+      ok.onclick = () => {
+        onConfirm();
+        document.body.removeChild(box);
+      };
+
+      const cancel = document.createElement("button");
+      cancel.textContent = "Cancel";
+      cancel.className = "cancel-btn";
+      cancel.onclick = () => {
+        document.body.removeChild(box);
+      };
+
+      box.appendChild(text);
+      box.appendChild(ok);
+      box.appendChild(cancel);
+      document.body.appendChild(box);
+    }
+  </script>
+
+</body>
+</html>
