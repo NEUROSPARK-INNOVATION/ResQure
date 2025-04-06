@@ -762,3 +762,15 @@ footer {
         padding: 120px 0 80px;
     }
 }
+/* thikthak */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spacing between image and text */
+  }
+  
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+  
