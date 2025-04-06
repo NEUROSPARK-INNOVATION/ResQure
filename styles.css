@@ -778,3 +778,18 @@ footer {
     height: 70px; 
     margin-right: 10px;
   }
+  @media (max-width: 480px) {
+    .logo-container {
+      padding: 12px 16px;
+    }
+  
+    .logo-img {
+      height: 32px;
+      margin-right: 6px;
+    }
+  
+    .logo {
+      font-size: 16px;
+    }
+  }
+  
