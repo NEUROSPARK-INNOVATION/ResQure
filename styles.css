@@ -773,4 +773,18 @@ footer {
     height: 50px;
     width: auto;
   }
-  
+  @media (max-width: 680px){
+    .hero {
+        margin-top: 12vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/phonefront.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding-top: 80px;
+    }
+    
+  }
