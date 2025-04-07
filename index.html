@@ -32,7 +32,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="/login/index.html" class="btn-primary">Sign Up</a></li>
+                <li id="signup-slot"><a href="/login/index.html" class="btn-primary">Sign Up</a></li>
              </ul>
             </div>
     </nav>
@@ -354,9 +354,8 @@
           "clientId": "05dc4529-0845-4a1a-978d-a913e86acf14",
           "selector": "#webchat"
         });
-        window.botpress.on("webchat:ready", function () {
-            window.botpress.open();
-          });
+        window.botpress.on("webchat:ready", () => {
+            });
       </script>
 </body>
 </html>

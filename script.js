@@ -481,3 +481,16 @@ if (typeof gsap !== "undefined" && gsap.registerPlugin) {
 
 
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const email = localStorage.getItem("email"); // or whatever key you used
+    const signupSlot = document.getElementById("signup-slot");
+
+    if (email) {
+      // Replace Sign Up with a circular icon leading to dashboard
+      signupSlot.innerHTML = `
+        <a href="/dashboard/index.html" title="Go to Dashboard" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #3B82F6; color: white; font-size: 18px;">
+          <img src="/assets/sarah.png">
+        </a>
+      `;
+    }
+  });
