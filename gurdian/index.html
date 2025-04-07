@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Dashboard | SOS App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🛡️</span>
+                    <h1>Guardian</h1>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <i data-feather="grid"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="users"></i>
+                            <span>Dependents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="map-pin"></i>
+                            <span>Locations</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="bell"></i>
+                            <span>Alerts</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i data-feather="settings"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="avatar">JD</div>
+                    <div class="user-details">
+                        <h4>John Doe</h4>
+                        <p>Guardian</p>
+                    </div>
+                </div>
+                <button class="logout-btn">
+                    <i data-feather="log-out"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <i data-feather="search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="notification-btn">
+                        <i data-feather="bell"></i>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <button class="mobile-menu-btn">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h2>Guardian Dashboard</h2>
+                    <p class="date">April 7, 2025</p>
+                </div>
+
+                <!-- Alert Banner -->
+                <div class="alert-banner active-sos">
+                    <div class="alert-icon">
+                        <i data-feather="alert-triangle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h3>ACTIVE SOS ALERT</h3>
+                        <p>Emma Thompson triggered an SOS alert 2 minutes ago</p>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn btn-primary">Respond</button>
+                        <button class="btn btn-outline">Call</button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon safe">
+                            <i data-feather="check-circle"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>3</h3>
+                            <p>Safe Dependents</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i data-feather="alert-circle"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>1</h3>
+                            <p>Active Alert</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon info">
+                            <i data-feather="activity"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>24</h3>
+                            <p>Check-ins Today</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon neutral">
+                            <i data-feather="map"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>4</h3>
+                            <p>Safe Zones</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dependents Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Dependents</h3>
+                        <button class="btn btn-sm">View All</button>
+                    </div>
+                    <div class="dependents-grid">
+                        <div class="dependent-card alert">
+                            <div class="dependent-status">
+                                <span class="status-indicator red"></span>
+                                SOS Active
+                            </div>
+                            <div class="dependent-avatar">ET</div>
+                            <h4>Emma Thompson</h4>
+                            <p class="dependent-relation">Daughter</p>
+                            <div class="dependent-location">
+                                <i data-feather="map-pin"></i>
+                                <span>Downtown, 2 min ago</span>
+                            </div>
+                            <div class="dependent-actions">
+                                <button class="btn btn-icon">
+                                    <i data-feather="phone"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i data-feather="message-circle"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i data-feather="map"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dependent-card">
+                            <div class="dependent-status">
+                                <span class="status-indicator green"></span>
+                                Safe
+                            </div>
+                            <div class="dependent-avatar">MJ</div>
+                            <h4>Michael Johnson</h4>
+                            <p class="dependent-relation">Son</p>
+                            <div class="dependent-location">
+                                <i data-feather="map-pin"></i>
+                                <span>School, 15 min ago</span>
+                            </div>
+                            <div class="dependent-actions">
+                                <button class="btn btn-icon">
+                                    <i data-feather="phone"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i data-feather="message-circle"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i data-feather="map"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dependent-card">
+                            <div class="dependent-status">
+                                <span class="status-indicator green"></span>
+                                Safe
+                            </div>
+                            <div class="dependent-avatar">SL</div>
+                            <h4>Sarah Lee</h4>
+                            <p class="dependent-relation">Mother</p>
+                            <div class="dependent-location">
+                                <i data-feather="map-pin"></i>
+                                <span>Home, 45 min ago</span>
+                            </div>
+                            <div class="dependent-actions">
+                                <button class="btn btn-icon">
+                                    <i data-feather="phone"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i data-feather="message-circle"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i data-feather="map"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dependent-card add-new">
+                            <div class="add-icon">
+                                <i data-feather="plus"></i>
+                            </div>
+                            <h4>Add New Dependent</h4>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Recent Activity</h3>
+                        <button class="btn btn-sm">View All</button>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon red">
+                                <i data-feather="alert-triangle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>SOS Alert Triggered</h4>
+                                <p>Emma Thompson triggered an SOS alert</p>
+                                <span class="activity-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i data-feather="check-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Check-in Received</h4>
+                                <p>Michael Johnson checked in at School</p>
+                                <span class="activity-time">15 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i data-feather="map"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Zone Entry</h4>
+                                <p>Sarah Lee entered Home zone</p>
+                                <span class="activity-time">45 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon yellow">
+                                <i data-feather="battery"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Low Battery Alert</h4>
+                                <p>Emma Thompson's device is at 15% battery</p>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map Section -->
+                <section class="dashboard-section map-section">
+                    <div class="section-header">
+                        <h3>Location Map</h3>
+                        <div class="map-controls">
+                            <button class="btn btn-sm btn-outline">Refresh</button>
+                            <button class="btn btn-sm">Full View</button>
+                        </div>
+                    </div>
+                    <div class="map-container" id="map">
+                        <!-- Map will be rendered here by JavaScript -->
+                        <div class="map-placeholder">
+                            <i data-feather="map"></i>
+                            <p>Interactive map showing dependent locations</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
