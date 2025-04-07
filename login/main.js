@@ -146,5 +146,5 @@ window.alert = function(message) {
 
   setTimeout(() => {
     toast.remove();
-  }, 1000); // Visible for 10s total
+  }, 2000); // Visible for 10s total
 };

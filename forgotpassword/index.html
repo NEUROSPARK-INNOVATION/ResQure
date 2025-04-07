@@ -127,9 +127,53 @@
                 padding: 1.5rem;
             }
         }
+        .toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+  
+  .toast {
+    background-color: #E94196;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    animation: fadeOut 2s ease-in-out 8s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      width: 100%;
+      opacity: 1;
+    }
+    50% {
+      width: 60%;
+      opacity: 0.6;
+    }
+    100% {
+      width: 0;
+      opacity: 0;
+      padding: 0;
+    }
+  }
+  input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none !important;
+}
+
+  
     </style>
 </head>
 <body>
+    <div class="toast-container" id="toast-container"></div>
     <div class="container">
         <div class="reset-card">
             <h1>Reset Password</h1>
@@ -207,6 +251,18 @@
   });
 });
 
+window.alert = function(message) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    container.appendChild(toast);
+  
+    setTimeout(() => {
+      toast.remove();
+    }, 3000); // Visible for 10s total
+  };
+  
     </script>
 </body>
 </html>
