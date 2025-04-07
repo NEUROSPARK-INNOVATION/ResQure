@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
 </head>
 <body>
+    <div id="webchat"></div>
     <div id="main">
     <div id="cursor"></div>
     <!-- Navigation -->
@@ -334,5 +336,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+    <script>
+        window.botpress.init({
+          "botId": "6c677f53-218d-4b37-ad87-30f82fc8163d",
+          "configuration": {
+            "website": {},
+            "email": {},
+            "phone": {},
+            "termsOfService": {},
+            "privacyPolicy": {},
+            "color": "#3B82F6",
+            "variant": "solid",
+            "themeMode": "light",
+            "fontFamily": "inter",
+            "radius": 1
+          },
+          "clientId": "05dc4529-0845-4a1a-978d-a913e86acf14",
+          "selector": "#webchat"
+        });
+        window.botpress.on("webchat:ready", function () {
+            window.botpress.open();
+          });
+      </script>
 </body>
 </html>
