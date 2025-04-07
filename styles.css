@@ -775,7 +775,7 @@ footer {
   }
   @media (max-width: 680px){
     .hero {
-        margin-top: 12vh;
+        margin-top: 10vh;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/phonefront.jpg');
         background-size: cover;
         background-position: center;
