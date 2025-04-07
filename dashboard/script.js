@@ -1650,7 +1650,7 @@ if (highAlertBtn) {
       }
   
       // ✅ Create link to live-map page
-      const liveLocationLink = `http://localhost:5000/dashboard/live-map.html?email=${encodeURIComponent(email)}`;
+      const liveLocationLink = `https://resqure.vercel.app/dashboard/live-map.html?email=${encodeURIComponent(email)}`;
   
       // ✅ Notify backend to send alert with live location link
       try {
