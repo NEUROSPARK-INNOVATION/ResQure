@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://resqure.vercel.app/sitemap.xml
