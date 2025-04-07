@@ -27,6 +27,17 @@ body {
     overflow-x: hidden;
 }
 
+.circle-overlay {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fb0404; /* Change the color as needed */
+    z-index: 999;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -72,6 +83,8 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    background-position: center;
+  
 }
 
 .section-header {
@@ -164,7 +177,7 @@ img {
     box-shadow: var(--shadow);
 }
 
-#cursor{
+/* #cursor{
     position: fixed;
     width: 20px;
     height: 20px;
@@ -175,7 +188,7 @@ img {
     mix-blend-mode: difference;
     transition: all 0.1s ease; */ 
     /* z-index: 1000; */
-}
+/* }
 
 /* Navigation */
 nav {
@@ -187,6 +200,7 @@ nav {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: var(--transition);
+    /* height: 12vh; */
 }
 
 nav .container {
@@ -232,26 +246,53 @@ nav .container {
     color: var(--dark-color);
 }
 
+.spacer {
+    height: 12vh;
+  }
+  
+
 /* Hero Section */
 .hero {
+    position: relative;
     margin-top: 12vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/front1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+    height: calc(100vh - 12vh);
+    overflow: hidden;
     color: white;
     text-align: center;
+    display: flex;
+    align-items: center;
     padding-top: 80px;
 }
+
+.hero::before {
+    content: '';
+    position: fixed;
+    top: 12vh; /* start after the navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 12vh);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('/assets/front1.jpg') center center / cover no-repeat;
+    z-index: -1;
+    transform: translateZ(0); /* helps with paint optimization */
+}
+
+.hero .container {
+    transform: translateY(-10%);
+    -webkit-transform: translateY(-10%);
+    -moz-transform: translateY(-10%);
+    -ms-transform: translateY(-10%);
+    -o-transform: translateY(-10%);
+}
+
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+   
+   
 }
 
-/* .hero-content h1::before {
+ .hero-content h1::before {
     content: "Empowering Women's Health & Safety";
     position: absolute;
     color:#5D35A5;
@@ -259,8 +300,9 @@ nav .container {
     left: -6px;
     -webkit-text-stroke: 1.5px #636ee7;
     z-index: -1;
- background-color: var(--primary-color); */  /* 
-}*/
+
+   
+}
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -373,7 +415,7 @@ nav .container {
 }
 
 .feature-box {
-    background-color: white;
+    /* background-color: white; */
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -381,6 +423,8 @@ nav .container {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    background: rgb(252, 237, 245);
+    box-shadow: rgba(4, 4, 244, 0.25) 0px 30px 50px -12px inset, rgba(252, 2, 152, 0.3) 0px 18px 26px -18px inset;
 }
 
 .feature-box:hover {
