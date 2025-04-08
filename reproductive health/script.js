@@ -298,5 +298,268 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   })
+
+  function breakText() {
+    var h2 = document.querySelector(".section-header h2");
+    var h2Text = h2.textContent;
+    var splittedText = h2Text.split("");
+    var clutter = "";
+
+    splittedText.forEach(function(elem) {
+        if (elem === " ") {
+            clutter += `<span style="display: inline-block;">&nbsp;</span>`; // Single gap between words
+        } else {
+            clutter += `<span style="display: inline-block;">${elem}</span>`; // No gap between letters
+        }
+    });
+
+    h2.innerHTML = clutter.trim();
+}
+breakText()
+gsap.from("#introduction-header h2 span", {
+  y: 30,
+  duration: 0.5,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "back.inOut(3)",
+  scrollTrigger: {
+      trigger: "#introduction-header h2",
+      scroller:"body", // Use body as the scroller
+      start: "top 80%", // Animation starts when the element is 80% in the viewport
+      end: "top 50%",  // Animation ends when the element is 50% in the viewport
+      toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+      // markers: true, // Uncomment for debugging
+  }
+});
+
+gsap.from(".text-content p",{
+  x: 100,
+  duration: 1.3,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "back.inOut(3)",
+  scrollTrigger: {
+      trigger: ".text-content p",
+      scroller:"body", // Use body as the scroller
+      start: "top 80%", // Animation starts when the element is 80% in the viewport
+      end: "top 50%",  // Animation ends when the element is 50% in the viewport
+      toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+      // markers: true, // Uncomment for debugging
+  }
+
+
+})
+
+gsap.from(".image-content img",{
+  x: -100,
+  duration: 1.3,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "back.inOut(3)",
+  scrollTrigger: {
+      trigger: ".text-content p",
+      scroller:"body", // Use body as the scroller
+      start: "top 80%", // Animation starts when the element is 80% in the viewport
+      end: "top 50%",  // Animation ends when the element is 50% in the viewport
+      toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+      // markers: true, // Uncomment for debugging
+  }
+})
+
+function breakText2() {
+  var h2 = document.querySelector("#issues-header h2");
+  var h2Text = h2.textContent;
+  var splittedText = h2Text.split("");
+  var clutter = "";
+
+  splittedText.forEach(function(elem) {
+      if (elem === " ") {
+          clutter += `<span style="display: inline-block;">&nbsp;</span>`; // Single gap between words
+      } else {
+          clutter += `<span style="display: inline-block;">${elem}</span>`; // No gap between letters
+      }
+  });
+
+  h2.innerHTML = clutter.trim();
+}
+breakText2()
+gsap.from("#issues-header h2 span", {
+  y: 30,
+  duration: 0.5,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "back.inOut(3)",
+  scrollTrigger: {
+      trigger: "#issues-header h2",
+      scroller: "body", // Use body as the scroller
+      start: "top 80%", // Animation starts when the element is 80% in the viewport
+      end: "top 50%",  // Animation ends when the element is 50% in the viewport
+      toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+      // markers: true, // Uncomment for debugging
+  }
+});
+
+// Hover animation for .card class
+document.querySelectorAll(".card").forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    gsap.to(card, {
+      scale: 1.07,
+      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+      duration: 0.3,
+      ease: "exp.out(3)",
+    });
+  });
+
+  card.addEventListener("mouseleave", () => {
+    gsap.to(card, {
+      scale: 1, // Reset to original scale
+      boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)", // Reset to original shadow
+      duration: 0.3,
+      ease: "exp.out(3)",
+    });
+  });
+});
+
+function breakText3() {
+  var h2 = document.querySelector("#tips-header h2");
+  var h2Text = h2.textContent;
+  var splittedText = h2Text.split("");
+  var clutter = "";
+
+  splittedText.forEach(function(elem) {
+      if (elem === " ") {
+          clutter += `<span style="display: inline-block;">&nbsp;</span>`; // Single gap between words
+      } else {
+          clutter += `<span style="display: inline-block;">${elem}</span>`; // No gap between letters
+      }
+  });
+
+  h2.innerHTML = clutter.trim();
+}
+breakText3()
+gsap.from("#tips-header h2 span", {
+  y: 30,
+  duration: 0.5,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "back.inOut(3)",
+  scrollTrigger: {
+      trigger: "#tips-header h2",
+      scroller: "body", // Use body as the scroller
+      start: "top 80%", // Animation starts when the element is 80% in the viewport
+      end: "top 50%",  // Animation ends when the element is 50% in the viewport
+      toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+      // markers: true, // Uncomment for debugging
+  }
+});
+
+document.querySelectorAll(".tip").forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    gsap.to(card, {
+      scale: 1.08,
+      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+      duration: 0.3,
+      ease: "exp.out(3)",
+    });
+  });
+
+  card.addEventListener("mouseleave", () => {
+    gsap.to(card, {
+      scale: 1, // Reset to original scale
+      boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)", // Reset to original shadow
+      duration: 0.3,
+      ease: "exp.out(3)",
+    });
+  });
+});
+
+function breakText4() {
+  var h2 = document.querySelector("#faq-header h2");
+  var h2Text = h2.textContent;
+  var splittedText = h2Text.split("");
+  var clutter = "";
+
+  splittedText.forEach(function(elem) {
+      if (elem === " ") {
+          clutter += `<span style="display: inline-block;">&nbsp;</span>`; // Single gap between words
+      } else {
+          clutter += `<span style="display: inline-block;">${elem}</span>`; // No gap between letters
+      }
+  });
+
+  h2.innerHTML = clutter.trim();
+}
+breakText4()
+gsap.from("#faq-header h2 span", {
+  y: 30,
+  duration: 0.5,
+  opacity: 0,
+  stagger: 0.1,
+  ease: "back.inOut(3)",
+  scrollTrigger: {
+      trigger: "#faq-header h2",
+      scroller: "body", // Use body as the scroller
+      start: "top 80%", // Animation starts when the element is 80% in the viewport
+      end: "top 50%",  // Animation ends when the element is 50% in the viewport
+      toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+      // markers: true, // Uncomment for debugging
+  }
+});
+
+gsap.from("#faq1", {
+  x: 300,
+  duration: 1,
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#faq1",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 50%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+gsap.from("#faq2", {
+  x: -300,
+  duration: 1,
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#faq2",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 50%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+gsap.from("#faq3", {
+  x: 300,
+  duration: 1,
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#faq3",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 50%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+gsap.from("#faq4", {
+  x: -300,
+  duration: 1,
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#faq4",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 50%",
+    toggleActions: "play none none reverse",
+  },
+});
   
   
