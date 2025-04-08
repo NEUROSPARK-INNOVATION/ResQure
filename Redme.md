@@ -47,16 +47,16 @@ OTHERWISE,
  ```bash
    git clone https://github.com/NEUROSPARK-INNOVATION/ResQure.git
 
- ```bash
+```bash
    cd resqure
 
- ```bash
+```bash
    npm install
 
- ```bash
+```bash
    npm start
 
- ```bash
+```bash
    node server.js
 
 Create a .env file add there
