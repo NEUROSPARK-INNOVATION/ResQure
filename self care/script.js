@@ -1176,3 +1176,345 @@ document.addEventListener('DOMContentLoaded', function() {
         return date.toLocaleDateString('en-US', options);
     }
 });
+
+gsap.from(".hero-content h1",{
+    y:-50,
+    opacity:0,
+    duration:1.5,
+    delay:0.5,
+    stagger:0.3
+})
+gsap.from(".hero-image img",{
+    x:200,
+    opacity:0,
+    duration:1.5,
+    delay:0.5,
+    stagger:0.3,
+    borderRadius:"55%",
+})
+gsap.from(".hero-content p",{
+    y:50,
+    opacity:0,
+    duration:1.5,
+    delay:1.3,
+    stagger:0.3
+})
+gsap.from(".hero-content button",{ 
+    y: 0, 
+    opacity: 1, 
+    duration: 2, 
+    delay: 1.3, 
+    stagger: 0.3 ,
+    scrub:4
+})
+
+function breakText() {
+    var header = document.querySelector(".section-header h2");
+    if (header) {
+        var h2Text = header.textContent;
+        var splittedText = h2Text.split("");
+        var clutter = "";
+
+        splittedText.forEach(function(elem) {
+            if (elem === " ") {
+                clutter += `<span style="display: inline-block;">&nbsp;</span>`; // Single gap between words
+            } else {
+                clutter += `<span style="display: inline-block;">${elem}</span>`; // No gap between letters
+            }
+        });
+
+        header.innerHTML = clutter.trim();
+    }
+}
+breakText();
+
+gsap.from(".section-header h2 span", {
+    y: 30,
+    duration: 0.5,
+    opacity: 0,
+    stagger: 0.1,
+    ease: "back.inOut(3)",
+    scrollTrigger: {
+        trigger: ".section-header h2 span",
+        scroller:"body", // Use body as the scroller
+        start: "top 80%", // Animation starts when the element is 80% in the viewport
+        end: "top 50%",  // Animation ends when the element is 50% in the viewport
+        toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
+        // markers: true, // Uncomment for debugging
+    }
+});
+
+gsap .from(".section-header p",{
+    y:30,
+    duration: 2,
+    opacity:0,  
+    delay : 1,
+    stagger:0.1,
+    scrub: 4,
+    ease:"power4.out",
+    scrollTrigger:{
+        trigger:".section-header",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+
+gsap.from(".plan-container",{
+    y:80,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.5,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".plan-container",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+
+gsap.from(".tip-card",{
+    y:80,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".tip-card",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+
+})
+
+gsap.fromTo(".routine-form", {
+    y: 80,
+    x: -100,
+    opacity: 0,
+}, {
+    y: 0,
+    x: 0,
+    opacity: 1,
+    duration: 0.5,
+    delay: 0.2,
+    stagger: 0.3,
+    scrollTrigger: {
+        trigger: ".routine-form",
+        start: "top 70%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+        // markers: true,
+    }
+});
+
+gsap.fromTo(".routine-list", {
+    y: 80,
+    x: 100,
+    opacity: 0,
+}, {
+    y: 0,
+    x: 0,
+    opacity: 1,
+    duration: 0.5,
+    delay: 0.2,
+    stagger: 0.3,
+    scrollTrigger: {
+        trigger: ".routine-form",
+        start: "top 70%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+        // markers: true,
+    }
+});
+
+gsap.from("#challenge-card-1",{
+    y:80,
+    x:100,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".challenge-card",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+
+gsap.from("#challenge-card-2",{
+    y:80,
+    x:-100,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".challenge-card",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+
+gsap.from(".active-challenge",{
+    y:80,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".active-challenge",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+
+gsap .from(".habit-form",{
+    y:80,
+    x:-100,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".habit-form",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+gsap .from(".habits-container",{
+    y:80,
+    x:100,
+    duration: 0.5,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".habits-container",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+})
+
+gsap.from(".breathing-tool",{
+    y:100,
+    // x:-100,
+    duration: 1,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".breathing-tool",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+
+})
+gsap.from(".meditation-videos",{
+    y:-100,
+    // x:100,
+    duration: 1,
+    opacity:0,  
+    delay : 0.2,
+    stagger:0.3,
+    scrollTrigger:{
+        trigger:".meditation-videos",
+        start:"top 70%",
+        end:"top 50%",
+        toggleActions:"play none none reverse",
+        // markers:true,
+    }
+
+})
+
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll(".diy-card").forEach((card, index) => {
+    // Scroll animation for feature cards with line-by-line uprising effect
+    gsap.fromTo(
+        card,
+        { y: 200, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power3.inOut",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                end: "top 50%",
+                toggleActions: "play none none reverse",
+                
+            },
+            delay: index * 0.2, // Delay for uprising effect
+        }
+    );
+
+    // Hover animation for feature cards
+    card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+            scale: 1.1,
+            boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+            backgroundColor: "lavender", // Change color on hover
+            duration: 0.3,
+            ease: "power3.inOut",
+        });
+
+        // Change h3 color when mouse enters the card
+        const h3 = card.querySelector("h3");
+        if (h3) {
+            h3.style.color = "#E83E8C";
+        }
+    });
+
+    card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+            scale: 1,
+            boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)",
+            backgroundColor: "", // Reset color on mouse leave
+            duration: 0.3,
+            ease: "power3.inOut",
+        });
+
+        // Reset h3 color when mouse leaves the card
+        const h3 = card.querySelector("h3");
+        if (h3) {
+            h3.style.color = "black";
+        }
+    });
+});
+
+// Scroll animation for the features grid container
+gsap.fromTo(
+    ".diy-ideas-container",
+    { y: 50, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.inOut",
+        scrollTrigger: {
+            trigger: ".diy-ideas-container",
+            start: "top 85%",
+            toggleActions: "play none none reverse", // Allows toggling when scrolling back
+        },
+    }
+);
+
+
