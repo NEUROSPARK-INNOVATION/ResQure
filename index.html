@@ -12,75 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-    <style>
-        /* Mobile Menu Styles */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-        }
-
-        .menu-toggle i {
-            font-size: 2rem;
-            color: #000;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin: 0 20px;
-        }
-
-        .nav-menu li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-        }
-
-        /* Mobile View */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                background-color: #fff;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                padding: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li {
-                margin: 10px 0;
-                text-align: center;
-            }
-
-            .nav-menu li a {
-                font-size: 18px;
-                color: #333;
-            }
-        }
-    </style>
 </head>
 <body>
     <div id="webchat"></div>
     <div id="main">
+
     <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo-container">
-            <img src="/assets/logo.jpg" alt="ResQure Logo" class="logo-img" />
+            <img src="/assets/logo.jpg" alt="ResQure Logo" class="logo-img"/>
              <div class="logo">ResQure</div>
             </div>
              <div class="menu-toggle">
@@ -95,6 +36,7 @@
              </ul>
             </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -152,6 +94,7 @@
         </div>
     </section>
 
+    
     <!-- Section Previews -->
     <section id="features" class="section-previews">
         <!-- HealthEdCenter -->
@@ -206,6 +149,137 @@
         </div>
     </section>
 
+    <!-- Key Features Section -->
+    <section class="key-features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Key Features</h2>
+                <p>Discover the tools designed to support your complete wellness journey</p>
+            </div>
+            <div class="features-container">
+                <div class="feature-box fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Period Tracker & Reminder</h3>
+                    <div class="feature-details">
+                        <p>Track your cycle, get predictions, and receive reminders for upcoming periods and fertility windows.</p>
+                    </div>
+                </div>
+                <div class="feature-box fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Self-Care Habit Tracker</h3>
+                    <div class="feature-details">
+                        <p>Build and maintain healthy habits with personalized tracking and gentle reminders.</p>
+                    </div>
+                </div>
+                <div class="feature-box fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Mental Health Check-Ins</h3>
+                    <div class="feature-details">
+                        <p>Regular mood tracking and guided check-ins to help you understand your emotional patterns.</p>
+                    </div>
+                </div>
+                <div class="feature-box fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Emergency SOS & High Alert</h3>
+                    <div class="feature-details">
+                        <p>Quick access to emergency contacts and location sharing for your safety and peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Our Community Says</h2>
+                <p>Join thousands of women who have transformed their wellness journey</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>The period tracker has been incredibly accurate, and the educational resources helped me understand my body better than ever before.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="author">
+                            <img src="/assets/sarahfront.avif" alt="Sarah J.">
+                            <div class="author-info">
+                                <h4>Sarah J.</h4>
+                                <p>Member since 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>The mental health resources and meditation guides have been a lifeline during stressful periods. I feel more balanced and in control.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="author">
+                            <img src="/assets/mayafront.avif" alt="Maya T.">
+                            <div class="author-info">
+                                <h4>Maya T.</h4>
+                                <p>Member since 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>The SOS feature gives me peace of mind when I'm traveling alone. It's like having a safety net wherever I go.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="author">
+                            <img src="/assets/leilafront.avif" alt="Leila K.">
+                            <div class="author-info">
+                                <h4>Leila K.</h4>
+                                <p>Member since 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="final-cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Begin Your Wellness Journey Today</h2>
+                <p>Join a community of women prioritizing their health, safety, and well-being.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary">Join Today</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -224,39 +298,64 @@
                             <li><a href="/login/index.html">Safety Features</a></li>
                         </ul>
                     </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/ourTeam/index.html">About Us</a></li>
+                            <li><a href="/ourTeam/index.html">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
                 </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/neurospark_innovation?igsh=MXYwNmM2d2NpajkwYw=="><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/neurospark-innovation/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ResQure. All rights reserved.</p>
+                <p>ResQure - A NEUROSPARK Product.</p>
             </div>
         </div>
     </footer>
+    </div>
     <script src="script.js"></script>
-
+    <script>
+        window.botpress.init({
+          "botId": "6c677f53-218d-4b37-ad87-30f82fc8163d",
+          "configuration": {
+            "website": {},
+            "email": {},
+            "phone": {},
+            "termsOfService": {},
+            "privacyPolicy": {},
+            "color": "#3B82F6",
+            "variant": "solid",
+            "themeMode": "light",
+            "fontFamily": "inter",
+            "radius": 1
+          },
+          "clientId": "05dc4529-0845-4a1a-978d-a913e86acf14",
+          "selector": "#webchat"
+        });
+        window.botpress.on("webchat:ready", () => {
+            });
+      </script>
     
 </body>
-<script>
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-menuToggle.addEventListener('click', () => {
-navMenu.classList.toggle('active');
-});
-
-window.botpress.init({
-"botId": "6c677f53-218d-4b37-ad87-30f82fc8163d",
-"configuration": {
-    "website": {},
-    "email": {},
-    "phone": {},
-    "termsOfService": {},
-    "privacyPolicy": {},
-    "color": "#3B82F6",
-    "variant": "solid",
-    "themeMode": "light",
-    "fontFamily": "inter",
-    "radius": 1
-},
-"clientId": "05dc4529-0845-4a1a-978d-a913e86acf14",
-"selector": "#webchat"
-});
-</script>
 </html>
