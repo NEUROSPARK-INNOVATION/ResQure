@@ -1,4 +1,4 @@
-# Resqure
+# ResQure
 
 ResQure is a powerful safety platform designed to help you respond swiftly in emergencies. Whether you're a victim of a dangerous situation or simply need peace of mind, ResQure provides key tools to alert your emergency contacts, record evidence, and ensure your safety.
 
@@ -48,20 +48,16 @@ OTHERWISE,
    git clone https://github.com/NEUROSPARK-INNOVATION/ResQure.git
 
  ```bash
-
-   cd resqure
-
- ```bash
-
-   npm install
+cd resqure
 
  ```bash
-
-   npm start
+npm install
 
  ```bash
+npm start
 
-   node server.js
+ ```bash
+node server.js
 
 Create a .env file add there
 MONGODB_URI=
