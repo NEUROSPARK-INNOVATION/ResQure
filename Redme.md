@@ -48,17 +48,17 @@ OTHERWISE,
    git clone https://github.com/NEUROSPARK-INNOVATION/ResQure.git
 
    ```bash
-  cd resqure
+     cd resqure
    
    ```bash
- npm install
+    npm install
 
    
    ```bash
-npm start
+   npm start
       
    ```bash
-node server.js
+   node server.js
 
 Create a .env file add there
 MONGODB_URI=
