@@ -48,16 +48,15 @@ OTHERWISE,
    git clone https://github.com/NEUROSPARK-INNOVATION/ResQure.git
 
  ```bash
-     cd resqure
-   
- ```bash
-    npm install
+   cd resqure
 
-   
+ ```bash
+   npm install
+
  ```bash
    npm start
 
-```bash
+ ```bash
    node server.js
 
 Create a .env file add there
