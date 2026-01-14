@@ -1,5 +1,5 @@
 # Resqure
-
+ 
 ResQure is a powerful safety platform designed to help you respond swiftly in emergencies. Whether you're a victim of a dangerous situation or simply need peace of mind, ResQure provides key tools to alert your emergency contacts, record evidence, and ensure your safety.
 
 ## Features
